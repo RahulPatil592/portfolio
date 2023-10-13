@@ -1,0 +1,133 @@
+#back-back{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    /* height: 100rem; */
+    background-color: yellow;
+   
+}
+
+
+#back{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 330vmax;
+    overflow: hidden;
+    background:rgba(34, 32, 34, 0.50);
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(100px);
+    
+}
+
+.c1{
+    z-index: -1;
+    position: absolute;
+    top: 10vmax;
+    left: -10vmax;
+    width: 30vmax;
+    height: 30vmax;
+    flex-shrink: 0;
+    border-radius: 500px;
+    background: linear-gradient(180deg, #EC9A3B 0%, rgba(136, 77, 22, 0.28) 100%);
+}
+
+.c2{
+    z-index: -1;
+    position: absolute;
+    top: 10vmax;
+    right: 43vmax;
+    width: 15vmax;
+    height: 15vmax;
+    flex-shrink: 0;
+    border-radius: 300px;
+    background: linear-gradient(180deg, #B5A93C 0%, rgba(136, 77, 22, 0.28) 100%);
+}
+
+.c3{
+    z-index: -1;
+    position: absolute;
+    top: -10vmax;
+    right: 0vmax;
+    width: 30vmax;
+    height: 30vmax;
+    flex-shrink: 0;
+    border-radius: 300px;
+    background: linear-gradient(180deg, #ECDA3B 0%, rgba(136, 77, 22, 0.28) 100%);
+}
+.c4{
+    z-index: -1;
+    position: absolute;
+    top: 40vmax;
+    right: 40vmax;
+    width: 35vmax;
+    height: 35vmax;
+    flex-shrink: 0;
+    border-radius: 430px;
+    background: linear-gradient(180deg, #ECDA3B 0%, rgba(136, 77, 22, 0.75) 100%);
+}
+
+.c5{
+    z-index: -1;
+    position: absolute;
+    top: 70vmax;
+    left: -5vmax;
+    width: 25vmax;
+    height: 25vmax;
+    flex-shrink: 0;
+    border-radius: 500px;
+background: linear-gradient(180deg, rgba(231, 173, 104, 0.87) 0%, rgba(136, 77, 22, 0.28) 100%);
+}
+
+.c6{
+    z-index: -1;
+    position: absolute;
+    top: 55vmax;
+    right: 5vmax;
+    width: 18vmax;
+    height: 18vmax;
+    flex-shrink: 0;
+    border-radius: 391px;
+    background: linear-gradient(180deg, rgba(255, 199, 0, 1) 0%, rgba(136, 77, 22, 0.14) 100%);
+}
+
+.c7{
+    z-index: -1;
+    position: absolute;
+    top: 90vmax;
+    right: 0vmax;
+    width: 30vmax;
+    height: 30vmax;
+    flex-shrink: 0;
+    border-radius: 391px;
+    background: linear-gradient(180deg, rgb(234, 116, 26) 0%, rgba(136, 77, 22, 0.14) 100%);
+}
+
+.c8{
+    z-index: -1;
+    position: absolute;
+    top: 110vmax;
+    right: 60vmax;
+    width: 40vmax;
+    height: 40vmax;
+    flex-shrink: 0;
+    border-radius: 391px;
+    background: linear-gradient(180deg, rgb(255, 234, 50) 0%, rgba(136, 77, 22, 0.14) 100%);
+}
+
+@media screen and (max-width:600px){
+    #back-back{
+        background-color: #ffe600;
+    }
+    
+    #back{
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 1662vmin;
+        overflow: hidden;
+        background:rgba(34, 32, 34, 0.50);
+        -webkit-backdrop-filter: blur(100px);
+        backdrop-filter: blur(100px);
+    }
+}

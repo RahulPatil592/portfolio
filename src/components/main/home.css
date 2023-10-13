@@ -1,0 +1,245 @@
+#home_sec{
+    position: relative;
+    width: 100vw;
+    height: fit-content;
+    padding: 0 1vmax;
+    display: flex;
+    padding-top: 2vmax;
+    padding-bottom: 15vmax;
+
+}
+
+#home_content_sec{
+    padding-top: 9vmax;
+    padding-left: 1vmax;
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    justify-content:baseline;
+    align-items: top;
+}
+
+#hi-emoji{
+    width: 4vmax;
+}
+#l1{
+    font-size: 4.2vmax;
+    font-weight: 600;
+    line-height: 4.2vmax;
+}
+#l2{
+    font-size: 7.5vmax;
+    font-weight: 600;
+    line-height: 7.5vmax;
+    word-spacing: .4vmax;
+}
+#l3{
+    font-size: 4vmax;
+    font-weight: 600;
+    line-height: 4vmax;
+}
+
+#my-profession{
+    font-size: 4.5vmax;
+    font-weight: 600;
+    line-height: 4.5vmax;
+    background: linear-gradient(270deg, #CD5F30 19.2%, rgba(201, 223, 63, 0.88) 92.49%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#l4{
+    color: var(--color-white-faint);
+    font-weight: 400;
+    font-size: 1.2vmax;
+    padding: 2vmax 0;
+}
+
+
+#social_media ul{
+    width: 12vmax;
+    height: 2.7vmax;
+    padding: 1vmax 1vmax;
+    background-color: var(--color-white-faint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    gap: 1.2vmax;
+}
+#social_media {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+     
+}
+
+.icn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5vmax;
+}
+
+
+
+
+
+/* Image section */
+
+#h_img{
+    position: relative;
+    display: flex;
+    width: 50%;
+    align-items: baseline;
+    justify-content: center;
+}
+#home_img_sec{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: baseline;
+    justify-content: center;
+}
+
+#mine{
+    position: absolute;
+    top: 6vmax;
+    right:3vmax;
+    width: 30vmax;
+}
+
+#ext{
+    position: absolute;
+    top: 22vmax;
+    right: 26vmax;
+    width: 11vmax;
+}
+
+#devt{
+    position: absolute;
+    top: 28vmax;
+    right: 0vmax;
+    width: 11vmax;
+}
+
+#star{
+    position: absolute;
+    top: 10vmax;
+    right: 6vmax;
+    width: 5vmax;
+    filter: drop-shadow(0px 0px 5px #cacaca);
+}
+
+
+
+
+@media screen and (max-width:600px){
+    #home_sec{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15vmin;
+    }
+    #home_content_sec{
+        padding-top: 9vmax;
+        width: 100%;
+        justify-content:center;
+        align-items: top;
+        text-align: center;
+
+    }
+
+
+    #hi-emoji{
+        width: 8vmin;
+    }
+    #l1{
+        font-size: 8vmin;
+        line-height: 9.5vmin;
+    }
+    #l2{
+        font-size: 14vmin;
+        line-height: 14vmin;
+    }
+    #l3{
+        font-size: 7vmin;
+        line-height: 9vmin;
+    }
+    
+    #my-profession{
+        font-size: 9vmin;
+        line-height: 10vmin;
+    }
+    #l4{
+        font-size:4vmin;;
+    }
+    #social_media ul{
+        width: 40vmin;
+        height: 9vmin;
+        gap: 4vmin;
+    }
+    #social_media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icn{
+        width: 4.5vmin;
+    }
+
+    #h_img{
+       padding-top: 1vmin;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: baseline;
+    }
+
+    #home_img_sec{
+       
+        position: relative;
+        width: 75vmin;
+        height: 75vmin;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+        
+    }
+    
+    #mine{
+        position: absolute;
+        top: 6vmin;
+        right: 0vmin;
+        width: 70vmin;
+    }
+    
+    #ext{
+        position: absolute;
+        top: 45vmin;
+        left: -5vmin;
+        width: 28vmin;
+    }
+    
+    #devt{
+        position: absolute;
+        top: 55vmin;
+        right: -4vmin;
+        width: 28vmin;
+    }
+    
+    #star{
+        position: absolute;
+        top: 17vmin;
+        right: 7vmin;
+        width:10vmin;
+    }
+
+}
+
+
