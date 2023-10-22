@@ -1,5 +1,5 @@
 #proj_sec{
-    position: relative;
+   
     width: 100%;
     height: fit-content;
     display: flex;
@@ -7,7 +7,8 @@
     padding: 0 1vmax;
     gap: 3vmax;
     align-items: center;
-    justify-content: baseline
+    justify-content: baseline;
+    padding-top:5vmax;
 }
 
 #proj_type_sec{
@@ -27,11 +28,25 @@
     gap: 1.5vmax;
 }
 
-#proj_type_sec ul li{
+#proj_type_sec ul .proj_type{
     padding: .4vmax 1vmax;
     width: fit-content;
     height: 60%;
     background-color: var(--color-white-faint-soft);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .8vmax;
+    
+    font-size: 1.1vmax;
+    font-weight: 400;
+}
+#proj_type_sec ul .active{
+    padding: .4vmax 1vmax;
+    width: fit-content;
+    height: 60%;
+    background-color: var(--color-secondary);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -42,8 +57,9 @@
     font-weight: 400;
 }
 
-#proj_type_sec ul li:hover{
-    background-color: var(--color-secondary);
+#proj_type_sec ul .proj_type:hover{
+    /* background-color: var(--color-secondary); */
+    color: var(--color-primary);
     border: none;
     cursor: pointer;
 }
@@ -51,12 +67,10 @@
 #projects_div{
     width: 98%;
     height: fit-content;
-    /* background-color: aliceblue; */
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(auto-fill,30vmax);
     justify-content: space-between;
-    align-items: baseline;
-    row-gap: 3vmax;
+    grid-row-gap: 3vmax;
     margin-bottom: 10vmax;
 }
 
@@ -84,6 +98,7 @@
 }
 .proj_img_div img{
     width: 100%;
+    
     border-radius: .5vmax;
 }
 .proj_desc_div{
@@ -123,6 +138,7 @@
     #proj_sec{
         padding: 0 2vmin;
         gap: 6vmin;
+        padding-top:6vmin;
     }
     
     #proj_type_sec{
@@ -137,7 +153,18 @@
         gap: 5vmin;
     }
     
-    #proj_type_sec ul li{
+    #proj_type_sec ul .proj_type{
+        padding: 1vmin 2.5vmin;
+        border-radius: 3vmin;
+        font-size: 4vmin;
+    }
+    #proj_type_sec ul .active{
+        padding: 1vmin 2.5vmin;
+        border-radius: 3vmin;
+        font-size: 4vmin;
+        background-color: var(--color-secondary);
+    }
+    #proj_type_sec ul .proj_type:hover{
         padding: 1vmin 2.5vmin;
         border-radius: 3vmin;
         font-size: 4vmin;

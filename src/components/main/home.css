@@ -1,12 +1,11 @@
 #home_sec{
-    position: relative;
     width: 100vw;
     height: fit-content;
     padding: 0 1vmax;
     display: flex;
     padding-top: 2vmax;
-    padding-bottom: 15vmax;
-
+    padding-bottom: 10vmax;
+   
 }
 
 #home_content_sec{
@@ -21,11 +20,14 @@
 
 #hi-emoji{
     width: 4vmax;
+    margin-right: .5vmax;
+    transform-origin: 80% bottom;
+
 }
 #l1{
-    font-size: 4.2vmax;
+    font-size: 4.5vmax;
     font-weight: 600;
-    line-height: 4.2vmax;
+    line-height: 4.5vmax;
 }
 #l2{
     font-size: 7.5vmax;
@@ -40,9 +42,9 @@
 }
 
 #my-profession{
-    font-size: 4.5vmax;
+    font-size: 5vmax;
     font-weight: 600;
-    line-height: 4.5vmax;
+    line-height: 5vmax;
     background: linear-gradient(270deg, #CD5F30 19.2%, rgba(201, 223, 63, 0.88) 92.49%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -79,8 +81,12 @@
     align-items: center;
     justify-content: center;
     width: 1.5vmax;
+    transition: all 0.2s;
 }
 
+.icn:hover{
+    transform: translateY(-5px);
+}
 
 
 
@@ -101,6 +107,7 @@
     width: 100%;
     align-items: baseline;
     justify-content: center;
+
 }
 
 #mine{
@@ -108,6 +115,8 @@
     top: 6vmax;
     right:3vmax;
     width: 30vmax;
+    filter: drop-shadow(0px 0px 4px #000000);
+    
 }
 
 #ext{
@@ -115,13 +124,23 @@
     top: 22vmax;
     right: 26vmax;
     width: 11vmax;
+    animation: move 2s linear 0s infinite alternate;
 }
 
+@keyframes move{
+    from {
+      transform: translateY(0);
+    }
+    to {
+        transform: translateY(-.9vmax);
+    }
+  }
 #devt{
     position: absolute;
     top: 28vmax;
     right: 0vmax;
     width: 11vmax;
+    animation: move 2s linear 0s infinite alternate;
 }
 
 #star{
@@ -130,7 +149,17 @@
     right: 6vmax;
     width: 5vmax;
     filter: drop-shadow(0px 0px 5px #cacaca);
+    animation: stbig 1.5s linear 0s infinite alternate;
 }
+
+@keyframes stbig{
+    from {
+      transform: scale(.7);
+    }
+    to {
+        transform: scale(1);
+    }
+  }
 
 
 
@@ -156,7 +185,7 @@
         width: 8vmin;
     }
     #l1{
-        font-size: 8vmin;
+        font-size: 9.5vmin;
         line-height: 9.5vmin;
     }
     #l2{
@@ -188,6 +217,9 @@
 
     .icn{
         width: 4.5vmin;
+    }
+    .icn:hover{
+        transform: translateY(0);
     }
 
     #h_img{
@@ -224,6 +256,7 @@
         top: 45vmin;
         left: -5vmin;
         width: 28vmin;
+        animation: none;
     }
     
     #devt{
@@ -231,6 +264,7 @@
         top: 55vmin;
         right: -4vmin;
         width: 28vmin;
+        animation: none;
     }
     
     #star{
@@ -238,6 +272,7 @@
         top: 17vmin;
         right: 7vmin;
         width:10vmin;
+        animation: none;
     }
 
 }

@@ -1,5 +1,4 @@
 #testi_sec {
-    position: relative;
     width: 100%;
     height: fit-content;
     display: flex;
@@ -45,6 +44,7 @@
     border-radius: .9vmax;
    pointer-events: none;
 }
+
 
 .person_div {
     width: 100%;

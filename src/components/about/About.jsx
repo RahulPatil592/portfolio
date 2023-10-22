@@ -1,11 +1,19 @@
+'use client';
 import React from 'react'
 import './about.css'
+import respdf from '../../assets/RahulPatil_Resume.pdf'
+import interests from './intrestsdata';
 
-import int1 from '../../assets/bulb_icon.svg'
-import int2 from '../../assets/pen_icon.svg'
-import int3 from '../../assets/headphone_icon.svg'
-import int4 from '../../assets/camera_icon.svg'
 const About = () => {
+  const handlemouse=(e)=>{
+    const {currentTarget: target}=e;
+    const rect=target.getBoundingClientRect(),
+    x=e.clientX-rect.left,
+    y=e.clientY-rect.top;
+    target.style.setProperty("--mouse-x",`${x}px`);
+    target.style.setProperty("--mouse-y",`${y}px`);
+    
+  };
   return (
     <div id='about_sec'>
       <div className='titles'>
@@ -19,12 +27,19 @@ const About = () => {
         I'm passionate about crafting digital experiences and creating innovative solutions for the web.
       </p>
       <div id='res_sec'>
-        <button>
+        <button onClick={()=>{
+          window.open(respdf);
+        }}>
           View Resume
         </button>
       </div>
       <div id='edu_n_int'>
-        <div id='edu_sec'>
+        <div 
+        onMouseMove={(e)=>{
+          handlemouse(e);
+        }}
+        id='edu_sec'>
+          
           <p className='title'>My Education</p>
           <div id='schools'>
             <div className='sch'>
@@ -44,7 +59,6 @@ const About = () => {
             <div className='sch'>
               <div className='grph'>
                 <div className='circ'>
-                  {/* <div className='circ_mini'></div> */}
                 </div>
                 <div className='line'></div>
               </div>
@@ -59,9 +73,7 @@ const About = () => {
             <div className='sch'>
               <div className='grph'>
                 <div className='circ'>
-                  {/* <div className='circ_mini'></div> */}
                 </div>
-                {/* <div className='line'></div> */}
               </div>
               <div className='sch_detail'>
                 <p className='school'>Kisanrao More High School and Jr. College, Sarawade</p>
@@ -74,22 +86,18 @@ const About = () => {
         <div id='int_sec'>
           <p className='title'>My Interests</p>
           <div id='intrs'>
-            <div className='int_div'>
-              <img src={int1} alt="" className='int_img' />
-              <p>Problem Solving</p>
+            {
+              interests.map((item,index)=>{
+             return(
+              <div className={`int_div idiv${index}`} key={index}>
+              <img src={item.imgsrc} alt="" className='int_img' />
+              <p>{item.title}</p>
             </div>
-            <div className='int_div'>
-              <img src={int2} alt="" className='int_img' />
-              <p>Drawing</p>
-            </div>
-            <div className='int_div d3'>
-              <img src={int3} alt="" className='int_img img3' />
-              <p>Music</p>
-            </div>
-            <div className='int_div d4'>
-              <img src={int4} alt="" className='int_img img3' />
-              <p>Movies</p>
-            </div>
+             )
+              })
+
+            }
+           
           </div>
         </div>
       </div>

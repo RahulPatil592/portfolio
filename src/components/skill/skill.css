@@ -1,5 +1,4 @@
 #skill_sec{
-    position: relative;
     width: 100%;
     height: fit-content;
     display: flex;
@@ -7,7 +6,8 @@
     padding: 0 1vmax;
     align-items: center;
     gap: 3vmax;
-    margin-bottom: 10vmax;
+    margin-bottom: 5vmax;
+    padding-top: 5vmax;
 }
 
 #sk_divs{
@@ -17,7 +17,7 @@
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: center;
-    align-items: center;
+    align-items:baseline;
     column-gap: 3vmax;
     row-gap: 3vmax;
 }
@@ -54,15 +54,16 @@
    border-radius: 0 0 1vmax 1vmax;
    display: grid;
    grid-template-columns: auto auto auto auto;
-   justify-content: space-between;
+   justify-content: center;    
    align-items: center;
    row-gap: 1vmax;
-   padding: 1vmax 1.5vmax;
+   padding: 1vmax 0;
+   column-gap: 1.5vmax;
 }
 
 .skill
 {
-   width: fit-content;
+   /* width: fit-content; */
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -95,7 +96,10 @@
 
 .skill_logo{
    width: 3vmax;
-   filter: drop-shadow(0px 0px 2px #000000);
+}
+
+.skill_logo:hover{
+    filter: drop-shadow(0px 0px 2px #000000);
 }
 
 .skill_detail{
@@ -107,17 +111,20 @@
 }
 
 .skill_name{
+    width: 100%;
     padding-top: .5vmax;
     text-align: center;
-    font-size: 1.2vmax;
-    line-height: 1.2vmax;
+    font-size: 1vmax;
+    line-height: 1vmax;
+    height: fit-content;
 }
 
 .skill_level{
+    width: 100%;
     padding-top: .5vmax;
     text-align: center;
-    font-size: .7vmax;
-    line-height: .7vmax;
+    font-size: .65vmax;
+    line-height: .65vmax;
     font-weight: 400;
     color: var(--color-white-faint);
 }
@@ -127,6 +134,7 @@
     #skill_sec{
         padding: 0 5vmin;
         gap: 10vmin;
+        padding-top:6vmin;
     }
     
     #sk_divs{
@@ -153,6 +161,7 @@
        border-radius: 0 0 2vmin 2vmin;
        row-gap: 4vmin;
        padding: 2vmin 5vmin;
+       column-gap: 5.5vmin;
     }
     
     .skill_back_circ{

@@ -2,23 +2,10 @@
     position: absolute;
     top: 0;
     width: 100vw;
-    /* height: 100rem; */
     background-color: yellow;
    
 }
 
-
-#back{
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 330vmax;
-    overflow: hidden;
-    background:rgba(34, 32, 34, 0.50);
-    -webkit-backdrop-filter: blur(100px);
-    backdrop-filter: blur(100px);
-    
-}
 
 .c1{
     z-index: -1;
@@ -100,34 +87,99 @@ background: linear-gradient(180deg, rgba(231, 173, 104, 0.87) 0%, rgba(136, 77, 
     height: 30vmax;
     flex-shrink: 0;
     border-radius: 391px;
-    background: linear-gradient(180deg, rgb(234, 116, 26) 0%, rgba(136, 77, 22, 0.14) 100%);
+    background: linear-gradient(180deg, rgb(234, 116, 26,.4) 0%, rgba(136, 77, 22, 0.14) 100%);
 }
 
 .c8{
     z-index: -1;
     position: absolute;
-    top: 110vmax;
-    right: 60vmax;
-    width: 40vmax;
-    height: 40vmax;
+    top: 140vmax;
+    right: 10vmax;
+    width: 25vmax;
+    height: 25vmax;
+    flex-shrink: 0;
+    border-radius: 391px;
+    background: linear-gradient(180deg, rgb(213, 198, 59,.7) 0%, rgba(218, 115, 19, 0.744) 100%);
+}
+
+
+.c9{
+    z-index: -1;
+    position: absolute;
+    top: 150vmax;
+    right: 70vmax;
+    width: 25vmax;
+    height: 25vmax;
     flex-shrink: 0;
     border-radius: 391px;
     background: linear-gradient(180deg, rgb(255, 234, 50) 0%, rgba(136, 77, 22, 0.14) 100%);
 }
+.c10{
+    z-index: -1;
+    position: absolute;
+    top: 100vmax;
+    left:0vmax;
+    width: 35vmax;
+    height: 35vmax;
+    flex-shrink: 0;
+    border-radius: 391px;
+    background: linear-gradient(180deg, rgb(255, 234, 50,.8) 0%, rgba(136, 77, 22, 0.14) 100%);
+}
+.c11{
+    z-index: -1;
+    position: absolute;
+    top: 200vmax;
+    right: 60vmax;
+    width: 30vmax;
+    height: 30vmax;
+    flex-shrink: 0;
+    border-radius: 391px;
+    background: linear-gradient(180deg, rgb(219, 106, 19,.6) 0%, rgba(136, 77, 22, 0.14) 100%);
+}
 
-@media screen and (max-width:600px){
-    #back-back{
-        background-color: #ffe600;
-    }
-    
-    #back{
-        position: absolute;
-        top: 0;
-        width: 100vw;
-        height: 1662vmin;
-        overflow: hidden;
-        background:rgba(34, 32, 34, 0.50);
-        -webkit-backdrop-filter: blur(100px);
-        backdrop-filter: blur(100px);
-    }
+.c12{
+    z-index: -1;
+    position: absolute;
+    top: 240vmax;
+    right: 30vmax;
+    width: 20vmax;
+    height: 20vmax;
+    flex-shrink: 0;
+    border-radius: 391px;
+    background: linear-gradient(180deg, rgba(219, 216, 19, 0.6) 0%, rgba(136, 58, 22, 0.822) 100%);
+}
+.c13{
+    z-index: -1;
+    position: absolute;
+    top: 190vmax;
+    right: 0vmax;
+    width: 40vmax;
+    height: 40vmax;
+    flex-shrink: 0;
+    border-radius: 391px;
+    background: linear-gradient(180deg, rgba(219, 219, 19, 0.6) 0%, rgba(136, 77, 22, 0.14) 100%);
+}
+
+.c14{
+    z-index: -1;
+    position: absolute;
+    top: 290vmax;
+    right: 5vmax;
+    width: 30vmax;
+    height: 30vmax;
+    flex-shrink: 0;
+    border-radius: 391px;
+    background: linear-gradient(180deg, rgba(219, 219, 19, 0.6) 0%, rgba(136, 77, 22, 0.14) 100%);
+}
+
+.c15{
+    z-index: -1;
+    position: absolute;
+    top: 290vmax;
+    left: 0vmax;
+    width: 35vmax;
+    height: 35vmax;
+    flex-shrink: 0;
+    border-radius: 391px;
+    background: linear-gradient(180deg, rgba(219, 139, 19, 0.6) 0%, rgba(136, 77, 22, 0.14) 100%);
 }

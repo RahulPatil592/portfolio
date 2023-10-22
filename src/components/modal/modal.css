@@ -1,0 +1,421 @@
+.main_mod_back{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3; 
+    background: rgba(34, 32, 34, 0.80);
+    
+}
+
+
+#mod_sec{
+    position: absolute;
+    top: 2vmax;
+    width: 100%;
+   height: 100%;
+    background-color:#2B292B;
+           
+    border-radius: 1vmax 1vmax 0 0;
+    overflow: hidden;
+}   
+
+#mod_circ1{
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 20vmax;
+    height: 20vmax;
+    background: linear-gradient(180deg, #CBAF1D 0%, #FF7B00 100%);
+    border-radius: 500px;
+
+}
+
+#mod_circ2{
+    position: absolute;
+    right: 0;
+    top: 10vmax;
+    width: 20vmax;
+    height: 20vmax;
+    background: linear-gradient(180deg, rgba(229, 41, 52, 0.50) 0%, rgba(241, 101, 41, 0.50) 100%);
+    border-radius: 500px;
+}
+
+#mod_circ3{
+    position: absolute;
+    right: 50vmax;
+    top: 35vmax;
+    width: 30vmax;
+    height: 30vmax;
+    background: linear-gradient(195deg, #D6D03D 10.69%, #AB6626 50.73%);
+    border-radius: 500px;
+    opacity: .75;
+}
+
+
+.close_btn{
+    position: absolute;
+    right: 1.2vmax;
+    top: 1.2vmax;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    transform: all 0.5;
+    background-color: var(--color-white);
+    width: 1.5vmax;
+    height: 1.5vmax;
+    border-radius: 500px;
+    transition: all 0.2s ease-out;
+   
+}
+
+.close_btn:hover{
+   transform: scale(1.2);
+}
+
+#close_img{
+    width: .8vmax;
+}
+
+#mod_back{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    backdrop-filter: blur(180px);
+    padding: 1vmax;
+
+}
+
+#proj_det{
+    width: 60%;
+    height: 96%;
+    display: block;
+    overflow-y: scroll;
+}
+
+
+
+.pname{
+    color: var(--color-white);
+    display: flex;
+    justify-content: baseline;
+    font-size: 3vmax;
+    line-height: 3vmax;
+    font-weight: 500;
+    padding: 2vmax 0 0 0;
+}
+
+.plinks{
+    display: flex;
+    gap: 1vmax;
+    padding: 1.3vmax 0;
+}
+
+.plink_div{
+    width: 2vmax;
+    height: 2vmax;
+    background-color: var(--color-white-faint);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+.plink_div a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+
+
+
+.icn_mod1{
+    width: 1.4vmax;
+}
+.plink_div a:hover{
+    background-color: var(--color-primary);
+}
+
+.icn_mod2{
+    width: 1.5vmax;
+}
+
+.ptags{
+    width: 93%;
+    padding: 2vmax 0;
+    display: flex;
+    align-items: center;
+    gap: .8vmax;
+}
+
+.tag_div{
+    width: fit-content;
+    padding: .1vmax 1vmax;
+    background-color: var(--color-secondary);
+    border-radius: .9vmax;
+    font-size: 1.2vmax;
+    
+}
+
+
+.abt_proj{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    font-size: 2vmax;
+    line-height: 2vmax;
+    font-weight: 450;
+    padding: 1vmax 0;
+}
+
+.pdesc{
+    font-size: 1vmax;
+    font-weight: 300;
+    color: var(--color-white-faint);
+}
+
+
+.car_sec{
+    aspect-ratio: 16/9;
+    background-color: rgb(86, 86, 86);
+    border-radius: 1vmax;
+    position: relative;
+    overflow: hidden; 
+}
+
+.car_btns{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 1vmax;
+    z-index: 5;
+   opacity: 0;
+}
+.car_btns:hover{
+   opacity: 1;
+}
+.car_back{
+    aspect-ratio: 16/9;
+    background-color: var(--color-white);
+    display: flex;
+    border-radius: 1vmax;
+    z-index: 4;
+    /* overflow: hidden; */
+}
+
+.carimg{
+   width: 100%; 
+   aspect-ratio: 16/9;
+}
+
+.prevbtn{
+    position: absolute;
+    left: 1vmax;
+    top: 45%;
+   
+}
+.prevbtn img{
+    width: 3vmax;
+}
+
+.nextbtn{
+    position: absolute;
+    right: 1vmax;
+    top: 45%;
+   
+}
+.nextbtn img{
+    width: 3vmax;
+}
+
+
+.car_btns button{
+    width: fit-content;
+    height: fit-content;
+    background: transparent;
+}
+
+#ctr_sec{
+   position: relative;
+   top: -1.5vmax;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+#btn_cntrl{
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(121, 121, 121);
+    display: flex;
+    gap: .7vmax;
+    align-items: center;
+    z-index: 10;
+    padding: .4vmax .7vmax;
+    border-radius: 1vmax;
+}
+
+.dot{
+    width: .5vmax;
+    height: .5vmax;
+    border-radius: 400px;
+    background-color: rgb(40, 40, 40);
+}
+
+.cl_dot{
+    width: .5vmax;
+    height: .5vmax;
+    border-radius: 400px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+@media screen and (max-width:600px) {
+    #mod_sec{
+        top: 6vmin;
+    }   
+    
+    .close_btn{
+        position: absolute;
+        right: 2vmin;
+        top:2vmin;
+        width: 6vmin;
+        height: 6vmin;
+       
+    }
+    
+    #close_img{
+        width: 3vmin;
+    }
+    
+    #mod_back{
+        padding: 1vmin;
+    }
+    
+    #proj_det{
+        width: 90%;
+    }
+    
+    
+    
+    .pname{
+        font-size: 10vmin;
+        line-height: 10vmin;
+        padding: 6vmin 0 0 0;
+    }
+    
+    .plinks{
+        gap: 2vmin;
+        padding: 5vmin 0;
+    }
+    
+    .plink_div{
+        width: 8vmin;
+        height: 8vmin;
+    }
+
+    .icn_mod1{
+        width: 5vmin;
+    }    
+    .icn_mod2{
+        width: 5.5vmin;
+    }
+    
+    .ptags{
+        padding: 4vmin 0;
+        gap: 2vmin;
+    }
+    
+    .tag_div{
+        width: fit-content;
+        padding: .2vmin 2vmin;
+        background-color: var(--color-secondary);
+        border-radius: 3vmin;
+        font-size: 3vmin;
+        
+    }
+    
+    
+    .abt_proj{
+        font-size: 6vmin;
+        line-height: 6vmin;
+        padding: 4vmin 0;
+    }
+    
+    .pdesc{
+        font-size: 4vmin;
+        font-weight: 300;
+        color: var(--color-white-faint);
+    }
+    
+    
+    .car_sec{
+        aspect-ratio: 4/3;
+        border-radius: 3vmin;
+
+    }
+    
+    .car_btns{
+
+        border-radius: 3vmin;
+    }
+
+    .car_back{
+        aspect-ratio: 4/3;
+        border-radius: 3vmin;
+    }
+    
+    .carimg{
+       aspect-ratio: 4/3;
+    }
+    
+    .prevbtn{
+
+        left: 1vmin;
+
+       
+    }
+    .prevbtn img{
+        width: 7vmin;
+    }
+    
+    .nextbtn{
+        right: 1vmin;
+    }
+
+    .nextbtn img{
+        width: 7vmin;
+    }
+    
+    
+    #ctr_sec{
+       top: 0;
+       padding: 2vmin 0;
+    }
+
+    #btn_cntrl{
+        gap: 3vmin;
+        padding: 1.3vmin 3vmin;
+        border-radius: 3vmin;
+    }
+    
+    .dot{
+        width: 1.5vmin;
+        height: 1.5vmin;
+    }
+    
+    .cl_dot{
+        width: 1.5vmin;
+        height: 1.5vmin;
+    }
+}

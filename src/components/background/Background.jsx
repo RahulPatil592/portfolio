@@ -20,7 +20,21 @@ function Background() {
          </div>
          <div className='c8'>
          </div>
-         <div id='back'></div>
+         <div className='c9'>
+         </div>
+         <div className='c10'>
+         </div>
+         <div className='c11'>
+         </div>
+         <div className='c12'>
+         </div>
+         <div className='c13'>
+         </div>
+         <div className='c14'>
+         </div>
+         <div className='c15'>
+         </div>
+         {/* <div id='back'></div> */}
     </div>
   )
 }

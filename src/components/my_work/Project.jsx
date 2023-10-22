@@ -1,13 +1,29 @@
 import React from 'react'
 import './project.css'
-import prj1 from '../../assets/prj1.png'
-// import prj1 from '../../assets/Home Page1 1prj1.png'
 import vm from '../../assets/visit_icon.svg'
+import data from './project_data'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
-const Project = () => {
+const Project = ({ modal, setModal, modData, setModData }) => {
+  const [filtered, setFiltered] = useState(data);
+  const [activecat, setActivecat] = useState('all');
+
+
+
+  useEffect(() => {
+    if (activecat === 'all') {
+      setFiltered(data);
+      return;
+    }
+    const currcat = data.filter((project) =>
+      project.category === activecat
+    )
+    setFiltered(currcat);
+  }, [activecat])
+
   return (
     <div id='proj_sec'>
-
       <div className='titles'>
         <div className='sec_title' >
           <p className='sec_title_one'>Projects</p>
@@ -17,90 +33,112 @@ const Project = () => {
 
       <div id='proj_type_sec'>
         <ul>
-          <li className="proj_type">All</li>
-          <li className="proj_type">Web Development</li>
-          <li className="proj_type">UI Design</li>
+          <li className={activecat === 'all' ? "active" : "proj_type"} onClick={() => {
+            setActivecat('all');
+          }}>All</li>
+          <li className={activecat === 'web_development' ? "active" : "proj_type"} onClick={() => {
+            setActivecat('web_development');
+          }}>Web Development</li>
+          <li className={activecat === 'ui_design' ? "active" : "proj_type"} onClick={() => {
+            setActivecat('ui_design');
+          }}>UI Design</li>
         </ul>
       </div>
 
-      <div id='projects_div'>
+      <motion.div layout id='projects_div'>
+        <AnimatePresence>
+          {
+            filtered.map(project => {
+              return (
+                <motion.div layout 
+                initial={{ opacity: 0 }}
+                 animate={{ opacity: 1 }} 
+                exit={{ opacity: 0 }} className='proj_div' key={project.id}>
+                  <div className='proj_img_div'>
+                    <img src={project.project_imgs[0]} alt="" />
+                  </div>
+                  <div className='proj_desc_div'>
+                    <p className='proj_desc'>{project.project_name}</p>
+                    <p className='view_more'
+                      onClick={() => {
+                        setModal(true)
+                        setModData(project)
+                      }}
+                    >
+                      View More
+                      <img src={vm} alt="" className='vm_icn' />
+                    </p>
+                  </div>
+                </motion.div>
+              )
+            })
+          }
+        </AnimatePresence>
+      </motion.div>
 
-        <div className='proj_div'>
-              <div className='proj_img_div'>
-                <img src={prj1} alt="" />
-              </div>
-              <div className='proj_desc_div'>
-                 <p className='proj_desc'>AgroGuru - Empowering Farmers with Crop Prediction and Agricultural Information</p>
-                 <p className='view_more'>
-                 View More
-                  <img src={vm} alt="" className='vm_icn'/>
-                 </p>
-              </div>
-        </div>
-
-
-        <div className='proj_div'>
-              <div className='proj_img_div'>
-                <img src={prj1} alt="" />
-              </div>
-              <div className='proj_desc_div'>
-                 <p className='proj_desc'>AgroGuru</p>
-                 <p className='view_more'>
-                 View More
-                  <img src={vm} alt="" className='vm_icn'/>
-                 </p>
-              </div>
-        </div>
-
-
-
-        <div className='proj_div'>
-              <div className='proj_img_div'>
-                <img src={prj1} alt="" />
-              </div>
-              <div className='proj_desc_div'>
-                 <p className='proj_desc'>AgroGuru - Empowering Farmers with Crop Prediction and Agricultural Information</p>
-                 <p className='view_more'>
-                 View More
-                  <img src={vm} alt="" className='vm_icn'/>
-                 </p>
-              </div>
-        </div>
-
-
-
-
-        <div className='proj_div'>
-              <div className='proj_img_div'>
-                <img src={prj1} alt="" />
-              </div>
-              <div className='proj_desc_div'>
-                 <p className='proj_desc'>AgroGuru - Empowering Farmers with Crop Prediction and Agricultural Information</p>
-                 <p className='view_more'>
-                 View More
-                  <img src={vm} alt="" className='vm_icn'/>
-                 </p>
-              </div>
-        </div>
-
-
-        <div className='proj_div'>
-              <div className='proj_img_div'>
-                <img src={prj1} alt="" />
-              </div>
-              <div className='proj_desc_div'>
-                 <p className='proj_desc'>AgroGuru - Empowering Farmers with Crop Prediction and Agricultural Information</p>
-                 <p className='view_more'>
-                 View More
-                  <img src={vm} alt="" className='vm_icn'/>
-                 </p>
-              </div>
-        </div>
-        
-        
-      </div>
     </div>
+
+
   )
 }
 
 export default Project
+
+
+// <div className='proj_div'>
+//               <div className='proj_img_div'>
+//                 <img src={prj1} alt="" />
+//               </div>
+//               <div className='proj_desc_div'>
+//                  <p className='proj_desc'>AgroGuru</p>
+//                  <p className='view_more'>
+//                  View More
+//                   <img src={vm} alt="" className='vm_icn'/>
+//                  </p>
+//               </div>
+//         </div>
+
+
+
+//         <div className='proj_div'>
+//               <div className='proj_img_div'>
+//                 <img src={prj1} alt="" />
+//               </div>
+//               <div className='proj_desc_div'>
+//                  <p className='proj_desc'>AgroGuru - Empowering Farmers with Crop Prediction and Agricultural Information</p>
+//                  <p className='view_more'>
+//                  View More
+//                   <img src={vm} alt="" className='vm_icn'/>
+//                  </p>
+//               </div>
+//         </div>
+
+
+
+
+//         <div className='proj_div'>
+//               <div className='proj_img_div'>
+//                 <img src={prj1} alt="" />
+//               </div>
+//               <div className='proj_desc_div'>
+//                  <p className='proj_desc'>AgroGuru - Empowering Farmers with Crop Prediction and Agricultural Information</p>
+//                  <p className='view_more'>
+//                  View More
+//                   <img src={vm} alt="" className='vm_icn'/>
+//                  </p>
+//               </div>
+//         </div>
+
+
+//         <div className='proj_div'>
+//               <div className='proj_img_div'>
+//                 <img src={prj1} alt="" />
+//               </div>
+//               <div className='proj_desc_div'>
+//                  <p className='proj_desc'>AgroGuru - Empowering Farmers with Crop Prediction and Agricultural Information</p>
+//                  <p className='view_more'>
+//                  View More
+//                   <img src={vm} alt="" className='vm_icn'/>
+//                  </p>
+//               </div>
+//         </div>

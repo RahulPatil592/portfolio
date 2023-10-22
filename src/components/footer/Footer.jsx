@@ -14,16 +14,16 @@ const Footer = () => {
             <div id='social_icns'>
                 <ul>
                     <li className="sc">
-                        <img src={linked_icon} alt="" className="sc_img" />
+                        <a href="https://www.linkedin.com/in/rahul-patil-121793288/" target='_blank' rel="noreferrer"><img src={linked_icon} alt="" className="sc_img" /></a>
                     </li>
                     <li className="sc">
-                        <img src={github_icon} alt="" className="sc_img" />
+                        <a href="https://github.com/RahulPatil592" target='_blank' rel="noreferrer"><img src={github_icon} alt="" className="sc_img" /></a>
                     </li>
                     <li className="sc">
-                        <img src={insta_icon} alt="" className="sc_img" />
+                        <a href="https://instagram.com/rahul_patil_8282?igshid=OGQ5ZDc2ODk2ZA==" target='_blank' rel="noreferrer"><img src={insta_icon} alt="" className="sc_img" /></a>
                     </li>
                     <li className="sc">
-                        <img src={fb_icon} alt="" className="sc_img" />
+                        <a href="https://www.facebook.com/profile.php?id=100014906802326&mibextid=ZbWKwL" target='_blank' rel="noreferrer"><img src={fb_icon} alt="" className="sc_img" /></a>
                     </li>
                 </ul>
             </div>

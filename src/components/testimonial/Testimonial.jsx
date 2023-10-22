@@ -27,7 +27,9 @@ const Testimonial = () => {
         {
             data.map((testimony) => {
               return (
-                <motion.div className='testimonial' key={testimony.id}>
+                <motion.div 
+                
+                className='testimonial' key={testimony.id}>
                   <div className='person_div'>
                     <div className='person_img_div'>
                       <img src={per} alt="" className='person_img' />
