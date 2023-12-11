@@ -11,18 +11,19 @@
     display: flex;
     flex-direction: column;
     padding: 0 2vmax;
-    margin-bottom: 5vmax;
-    padding-top: 5vmax;
-   
+    margin-bottom: 9vmax;
+    padding-top: 6vmax;
 
 }
 
 
 .abt_me_cnt {
+    width: 100%;
     display: flex;
     justify-items: center;
-    width: 100%;
+   
     text-align: center;
+    font-size: 1.2vmax;
     padding: 2vmax 5vmax;
     color: var(--color-white-faint);
     
@@ -39,21 +40,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1vmax 0;
+   
 }
 
 #res_sec button {
-    width: 10vmax;
-    padding: .7vmax 1.6vmax;
-    font-weight: 500;
-    font-size: 1.1vmax;
-    background-color: rgb(142, 142, 142, 0.75);
-    color: var(--color-white);
+    width: fit-content;
+    padding: 1vmax 2vmax;
+    font-weight: 550;
+    font-size: 1.2vmax;
+    background: transparent;
+    border: solid 1px var(--color-secondary);
+    color: var(--color-white-faint);
     border-radius: 2vmax;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    transition: all .15s ease-in-out;
+    transition: all .5s ease-in-out;
 
 }
 
@@ -61,6 +64,7 @@
     transform: scale(1.05);
     background-color: var(--color-secondary);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.50));
+    border: none;
 }
 
 #edu_n_int {
@@ -233,6 +237,7 @@
     height: 9vmax;
     background-color: var(--color-white-faint-soft);
     border-radius: 1vmax;
+   
 }
 
 .idiv0:hover {
@@ -262,14 +267,25 @@
     align-items: center;
 }
 
+
 #mission p {
     width: 90%;
+    font-size: 1.2vmax;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    
+    /* color: var(--color-white-faint); */
 }
 
+#mission .title{
+    font-size: 1.8vmax;
+    padding: 2vmax 0;
+}
+.my_msn{
+    color: var(--color-white-faint);
+}
 
 
 @media screen and (max-width:600px) {
@@ -298,6 +314,7 @@
     #edu_n_int {
         padding: 0 2vmin;
         margin-top: 3vmin;
+        gap: 0vmax;
 
     }
 
@@ -412,22 +429,23 @@
 
 
     #int_sec {
-        width: 40%;
-        height: 110vmin;
+        width: 100%;
+        height: fit-content;
         border-radius: 1vmin;
         padding-top: .8vmax;
         gap: 1.5vmin;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items:flex-end;
+        
     }
 
     #intrs {
         display: flex;
         flex-direction: column;
         height: 100%;
-        width: 100%;
-        align-items: center;
+        width: 150%;
+        align-items: baseline;
         justify-items: space-between;
         gap: 4vmin;
     }

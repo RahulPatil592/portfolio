@@ -21,7 +21,7 @@ const App = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    emailjs.sendForm('service_yegchll', 'template_kvqosfp', form.current, '62snBK0RsvIeoiV6V')
+    emailjs.sendForm('service_yegchll', 'template_kvqosfp', event.target, '62snBK0RsvIeoiV6V')
       .then((result) => {
 
         toast.success('Message sent successfully !')

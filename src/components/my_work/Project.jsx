@@ -4,6 +4,7 @@ import vm from '../../assets/visit_icon.svg'
 import data from './project_data'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Fade } from "react-awesome-reveal";
 
 const Project = ({ modal, setModal, modData, setModData }) => {
   const [filtered, setFiltered] = useState(data);
@@ -25,35 +26,40 @@ const Project = ({ modal, setModal, modData, setModData }) => {
   return (
     <div id='proj_sec'>
       <div className='titles'>
-        <div className='sec_title' >
-          <p className='sec_title_one'>Projects</p>
-          <p className='sec_title_two'>Look at my recent work<span></span></p>
-        </div>
+        <Fade direction='up' >
+          <div className='sec_title' >
+            <p className='sec_title_one'>Projects</p>
+            <p className='sec_title_two'>Look at my recent work<span></span></p>
+          </div>
+        </Fade>
       </div>
-
+      
       <div id='proj_type_sec'>
         <ul>
-          <li className={activecat === 'all' ? "active" : "proj_type"} onClick={() => {
-            setActivecat('all');
-          }}>All</li>
-          <li className={activecat === 'web_development' ? "active" : "proj_type"} onClick={() => {
-            setActivecat('web_development');
-          }}>Web Development</li>
-          <li className={activecat === 'ui_design' ? "active" : "proj_type"} onClick={() => {
-            setActivecat('ui_design');
-          }}>UI Design</li>
+          <Fade direction='up' cascade damping={0.1} delay={200}>
+            <li className={activecat === 'all' ? "active" : "proj_type"} onClick={() => {
+              setActivecat('all');
+            }}>All</li>
+            <li className={activecat === 'web_development' ? "active" : "proj_type"} onClick={() => {
+              setActivecat('web_development');
+            }}>Web Development</li>
+            <li className={activecat === 'ui_design' ? "active" : "proj_type"} onClick={() => {
+              setActivecat('ui_design');
+            }}>UI Design</li>
+          </Fade>
         </ul>
       </div>
 
-      <motion.div layout id='projects_div'>
+      <motion.div layout id='projects_div' >
         <AnimatePresence>
+       
           {
             filtered.map(project => {
               return (
-                <motion.div layout 
-                initial={{ opacity: 0 }}
-                 animate={{ opacity: 1 }} 
-                exit={{ opacity: 0 }} className='proj_div' key={project.id}>
+                <motion.div layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }} className='proj_div' key={project.id}>
                   <div className='proj_img_div'>
                     <img src={project.project_imgs[0]} alt="" />
                   </div>
@@ -73,10 +79,14 @@ const Project = ({ modal, setModal, modData, setModData }) => {
               )
             })
           }
+        
+
         </AnimatePresence>
       </motion.div>
-
-    </div>
+     
+    
+    </div >
+     
 
 
   )

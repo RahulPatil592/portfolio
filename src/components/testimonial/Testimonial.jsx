@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import per from '../../assets/profile_icon.svg'
 import data from './testimonial_data'
+import { Fade } from "react-awesome-reveal";
 
 const Testimonial = () => {
  const [width,setWidth]=useState(0);
@@ -15,15 +16,18 @@ const Testimonial = () => {
 
   return (
     <div id='testi_sec'>
-      <div className='titles'>
-        <div className='sec_title'>
-          <p className='sec_title_one'>Testimonials</p>
-          <p className='sec_title_two'>What people say<span></span></p>
-        </div>
+      <div className='titles' >
+        <Fade direction='up' >
+          <div className='sec_title'>
+            <p className='sec_title_one'>Testimonials</p>
+            <p className='sec_title_two'>What people say<span></span></p>
+          </div>
+        </Fade>
       </div>
-
+       
       <div id='testmns_sec' ref={carousel}>
         <motion.div  drag="x" dragConstraints={{right:0,left:-width}} id='testimonials' whileTap={{cursor:"grabbing"}} initial={{opacity:0}}animate={{opacity:1}}>
+        <Fade direction='up' >
         {
             data.map((testimony) => {
               return (
@@ -45,10 +49,12 @@ const Testimonial = () => {
               );
             })
           }
+             </Fade>
 
         </motion.div>
 
       </div>
+   
     </div>
   )
 }
