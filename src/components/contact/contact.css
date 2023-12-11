@@ -162,7 +162,7 @@ form{
     
     color: var(--color-white);
     cursor: pointer;
-    transition: all .3s;
+    transition: all .2s;
 }
 
 #row3 button:hover{

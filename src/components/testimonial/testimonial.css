@@ -43,6 +43,7 @@
     padding: 1vmax;
     border-radius: .9vmax;
    pointer-events: none;
+   
 }
 
 
@@ -126,7 +127,6 @@
     {
         width: 95%;
         gap: 1vmin;
-        overflow: hidden; 
     }
 
 
@@ -148,7 +148,6 @@
     {
         width: 86vmin;
         height: 100%;
-        background-color: var(--color-white-faint-soft);
         display: flex;
         gap: 2vmin;
         padding: 2vmin;

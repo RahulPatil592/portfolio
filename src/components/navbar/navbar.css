@@ -53,6 +53,7 @@
     /* background-color:var(--color-white-faint-soft); */
     background-color: var(--color-secondary);
     cursor: pointer;
+    box-shadow: 0 0 15px -3px black;
 }
 
 #ham_menu{

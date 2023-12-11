@@ -13,10 +13,10 @@
     padding: 0 2vmax;
     margin-bottom: 5vmax;
     padding-top: 5vmax;
-
-
+   
 
 }
+
 
 .abt_me_cnt {
     display: flex;
@@ -25,6 +25,7 @@
     text-align: center;
     padding: 2vmax 5vmax;
     color: var(--color-white-faint);
+    
 
 }
 
