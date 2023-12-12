@@ -12,16 +12,21 @@
     align-items: center;
     justify-content: space-between;
     
+    
 }
 
 #app_logo{
     font-size: 1.5vmax;
     font-weight: 500;
+   
 }
 
 .nav_list{
     display: flex;
     gap: 2.2vmax;
+    padding: .3vmax .5vmax;
+    background-color: rgba(70, 67, 68,.8);
+    border-radius: 4vmax;
 
 }
 
