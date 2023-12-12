@@ -16,9 +16,9 @@ const About = () => {
 
   };
 
-  
+
   return (
-    
+
     <div id='about_sec'>
       <Fade direction='up' >
         <div className='titles'>
@@ -37,67 +37,69 @@ const About = () => {
         </p>
       </Fade>
       <Fade direction='up'>
-      <div id='res_sec'>
-        <button onClick={() => {
-          window.open(respdf);
-        }}>
-          View Resume
-        </button>
-      </div>
+        <div id='res_sec'>
+          <button onClick={() => {
+            window.open(respdf);
+          }}>
+            View Resume
+          </button>
+        </div>
       </Fade>
       <Fade direction='up' cascade damping={0.01} triggerOnce>
         <div id='edu_n_int'>
-
+        
           <div
             onMouseMove={(e) => {
               handlemouse(e);
             }}
             id='edu_sec'>
+            <Fade direction='up' >
+              <p className='title'>My Education</p>
 
-            <p className='title'>My Education</p>
-            <div id='schools'>
-              <div className='sch'>
-                <div className='grph'>
-                  <div className='circ'>
-                    <div className='circ_mini'></div>
+              <div id='schools'>
+                <div className='sch'>
+                  <div className='grph'>
+                    <div className='circ'>
+                      <div className='circ_mini'></div>
+                    </div>
+                    <div className='line'></div>
                   </div>
-                  <div className='line'></div>
-                </div>
-                <div className='sch_detail'>
-                  <p className='school'>Pune Institute of Computer Technology, Pune</p>
-                  <p className='time'>2021-2025</p>
-                  <p className='deg'>Computer Engineering</p>
-                </div>
-              </div>
-
-              <div className='sch'>
-                <div className='grph'>
-                  <div className='circ'>
-                  </div>
-                  <div className='line'></div>
-                </div>
-                <div className='sch_detail'>
-                  <p className='school'>Shri Balaji Madhyamik Vidyalaya and Jr. College,
-                    Ichalkaranji</p>
-                  <p className='time'>2021</p>
-                  <p className='deg'>HSC</p>
-                </div>
-              </div>
-
-              <div className='sch'>
-                <div className='grph'>
-                  <div className='circ'>
+                  <div className='sch_detail'>
+                    <p className='school'>Pune Institute of Computer Technology, Pune</p>
+                    <p className='time'>2021-2025</p>
+                    <p className='deg'>Computer Engineering</p>
                   </div>
                 </div>
-                <div className='sch_detail'>
-                  <p className='school'>Kisanrao More High School and Jr. College, Sarawade</p>
-                  <p className='time'>2019</p>
-                  <p className='deg'>SSC</p>
+
+                <div className='sch'>
+                  <div className='grph'>
+                    <div className='circ'>
+                    </div>
+                    <div className='line'></div>
+                  </div>
+                  <div className='sch_detail'>
+                    <p className='school'>Shri Balaji Madhyamik Vidyalaya and Jr. College,
+                      Ichalkaranji</p>
+                    <p className='time'>2021</p>
+                    <p className='deg'>HSC</p>
+                  </div>
+                </div>
+
+                <div className='sch'>
+                  <div className='grph'>
+                    <div className='circ'>
+                    </div>
+                  </div>
+                  <div className='sch_detail'>
+                    <p className='school'>Kisanrao More High School and Jr. College, Sarawade</p>
+                    <p className='time'>2019</p>
+                    <p className='deg'>SSC</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Fade>
           </div>
-
+         
 
 
           <div id='int_sec'>
@@ -130,16 +132,16 @@ const About = () => {
 
         </div>
         <Fade direction='up'>
-        <div id='mission'>
-          
+          <div id='mission'>
+
             <p className='title'>My Mission</p>
             <p className='my_msn'>
               My mission is to use my computer engineering skills to contribute positively to our surroundings. I'll continuously learn and stay current with the latest developments in computer technology. My objective is to address real-world problems through my knowledge. I strive to inspire creativity and innovation, connecting people and ideas to enhance daily life.
             </p>
-         
-        </div>
+
+          </div>
         </Fade>
-        </Fade>
+      </Fade>
     </div>
 
   )
