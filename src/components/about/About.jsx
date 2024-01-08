@@ -4,6 +4,7 @@ import './about.css'
 import respdf from '../../assets/RahulPatil_Resume.pdf'
 import interests from './intrestsdata';
 import { Fade } from "react-awesome-reveal";
+import { FaArrowRight } from "react-icons/fa";
 
 const About = () => {
   const handlemouse = (e) => {
@@ -42,6 +43,7 @@ const About = () => {
             window.open(respdf);
           }}>
             View Resume
+            <FaArrowRight className='arrow_right'/>
           </button>
         </div>
       </Fade>

@@ -40,6 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+   
     padding: 1vmax 0;
    
 }
@@ -57,14 +58,22 @@
     justify-content: center;
     align-items: center;
     transition: all .5s ease-in-out;
+    gap: .5vmax;
 
 }
 
+.arrow_right{
+    transition: all .5s;
+}
 #res_sec button:hover {
     transform: scale(1.05);
     background-color: var(--color-secondary);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.50));
     border: none;
+}
+
+#res_sec button:hover .arrow_right{
+   transform: translateX(5px);
 }
 
 #edu_n_int {
