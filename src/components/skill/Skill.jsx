@@ -1,8 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './skill.css'
-import data from './skilldata'
 import { Fade } from "react-awesome-reveal";
+import axios from 'axios';
+import { useEffect } from 'react';
 const Skill = () => {
+  const [skills, setSkills] = useState([])
+
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/api/v1/skills/get-skills');
+
+        if (response.data.length === 0) {
+          console.log("No data")
+        }
+
+        setSkills(response.data.data);
+      } catch (error) {
+        console.error('Error fetching skills:', error);
+      }
+    };
+    fetchSkills();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+
   return (
     <div id='skill_sec'>
       <Fade direction='up'>
@@ -14,22 +37,24 @@ const Skill = () => {
 
         </div>
       </Fade>
-      <div id='sk_divs'>
+      {
+        skills.length>0 &&
+        <div id='sk_divs'>
         <Fade direction='up' cascade damping={0.1} duration={1000} >
           {
-            data.map((item, index) => {
+            skills.map((item, index) => {
               return (
                 <div className='skills_div' key={index}>
-                  <div className='skill_title'>{item.type}</div>
+                  <div className='skill_title'>{item._id}</div>
 
                   <div className='skill_div'>
                     {
-                      item.subtype.map((it, ind) => {
+                      item.subSkills.map((it, ind) => {
                         return (
                           <div className='skill' key={ind}>
                             <div className='skill_back_circ'>
                               <div className='skill_white_back'>
-                                <img src={it.imgsrc} alt="" className='skill_logo' /></div>
+                                <img src={it.displayImage} alt="" className='skill_logo' /></div>
                             </div>
                             <div className='skill_detail'>
                               <p className='skill_name'>{it.name}</p>
@@ -38,19 +63,22 @@ const Skill = () => {
                           </div>
                         )
                       }
-                )
-                  }
+                      )
+                    }
+
+
+                  </div>
 
 
                 </div>
+              )
+            })
+          }
+        </Fade>
+      </div>
 
-
-              </div>
-      )
-          })
-        }
-            </Fade>
-    </div>
+      }
+      
     </div >
   )
 }

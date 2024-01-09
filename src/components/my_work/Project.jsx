@@ -1,27 +1,53 @@
 import React from 'react'
 import './project.css'
 import vm from '../../assets/visit_icon.svg'
-import data from './project_data'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Fade } from "react-awesome-reveal";
+import axios from 'axios'
+
+const Project = ({ modal, setModal, modData, setModData }) => {
+  const [filtered, setFiltered] = useState([]);
+  const [activecat, setActivecat] = useState('All');
+  const [projects, setProjects] = useState([]);
+  const [categories,setCategories]=useState([]);
+  // setCategories()
+  // const categories=["all","ui design","web_development"]
+  
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/api/v1/projects/get-projects');
+        const data = response.data[0];
+        if(data.length===0){
+          console.log("No data")
+        }
+        categories.push("All")
+        for(let i=0; i<response.data[1].length; i++){
+          categories.push(response.data[1][i]._id)
+        }
+        setCategories(categories)
+        setProjects(data);
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+      }
+    };
+    fetchProjects();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 
-const Project = ({ projects,modal, setModal, modData, setModData }) => {
-  const [filtered, setFiltered] = useState(data);
-  const [activecat, setActivecat] = useState('all');
- 
 
   useEffect(() => {
-    if (activecat === 'all') {
-      setFiltered(data);
+    if (activecat === 'All' && projects) {
+      setFiltered(projects);
       return;
     }
-    const currcat = data.filter((project) =>
+    const currcat = projects.filter((project) =>
       project.category === activecat
     )
     setFiltered(currcat);
-  }, [activecat])
+  }, [activecat, projects])
 
   return (
     <div id='proj_sec'>
@@ -33,58 +59,80 @@ const Project = ({ projects,modal, setModal, modData, setModData }) => {
           </div>
         </Fade>
       </div>
-      
+
       <div id='proj_type_sec'>
         <ul>
           <Fade direction='up' cascade damping={0.1} delay={200}>
-            <li className={activecat === 'all' ? "active" : "proj_type"} onClick={() => {
+            {
+              categories.map((cat,index)=>{
+                return(
+                  <li 
+                  className={activecat ===cat? "active" : "proj_type"} 
+                  onClick={() => {setActivecat(cat)}}
+                  key={index}
+                  >{cat}</li>
+                )
+              })
+            }
+            {/* <li className={activecat === 'all' ? "active" : "proj_type"} onClick={() => {
               setActivecat('all');
             }}>All</li>
             <li className={activecat === 'web_development' ? "active" : "proj_type"} onClick={() => {
               setActivecat('web_development');
             }}>Web Development</li>
-            <li className={activecat === 'ui_design' ? "active" : "proj_type"} onClick={() => {
-              setActivecat('ui_design');
-            }}>UI Design</li>
+            <li className={activecat === 'ui design' ? "active" : "proj_type"} onClick={() => {
+              setActivecat('ui design');
+            }}>UI Design</li> */}
           </Fade>
         </ul>
       </div>
 
-      <motion.div layout id='projects_div' >
-        <AnimatePresence>
-       
-          {
-            filtered.map(project => {
-              return (
-                <motion.div layout
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }} className='proj_div' key={project.id}>
-                  <div className='proj_img_div'>
-                    <img src={project.project_imgs[0]} alt="" />
-                  </div>
-                  <div className='proj_desc_div'>
-                    <p className='proj_desc'>{project.project_name}</p>
-                    <p className='view_more'
-                      onClick={() => {
-                        setModal(true)
-                        setModData(project)
-                      }}
-                    >
-                      View More
-                      <img src={vm} alt="" className='vm_icn' />
-                    </p>
-                  </div>
-                </motion.div>
-              )
-            })
-          }
-        </AnimatePresence>
-      </motion.div>
-     
-    
+      {
+        projects.length === 0 &&
+        <div>
+          No internet connection
+        </div>
+        
+      }
+      {
+
+        projects.length > 0 &&
+
+        <motion.div layout id='projects_div' >
+          <AnimatePresence>
+
+            {
+              filtered.map((project, index) => {
+                return (
+                  <motion.div layout
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }} className='proj_div' key={index}>
+                    <div className='proj_img_div'>
+                      <img src={project.coverImage} alt="" />
+                    </div>
+                    <div className='proj_desc_div'>
+                      <p className='proj_desc'>{project.name}</p>
+                      <p className='view_more'
+                        onClick={() => {
+                          setModal(true)
+                          setModData(project)
+                        }}
+                      >
+                        View More
+                        <img src={vm} alt="" className='vm_icn' />
+                      </p>
+                    </div>
+                  </motion.div>
+                )
+              })
+            }
+          </AnimatePresence>
+        </motion.div>
+      }
+
     </div >
-     
+
 
 
   )

@@ -20,7 +20,7 @@ const Modal = ({ data, setModal }) => {
   }
 
   const onNextclick = () => {
-    if (current < data.project_imgs.length - 1) {
+    if (current < data.screenShots.length - 1) {
       setCurrent(current + 1);
     }
   }
@@ -39,17 +39,18 @@ const Modal = ({ data, setModal }) => {
         <div id='mod_back'>
           <div id='proj_det'>
             <Fade direction='up' triggerOnce>
-              <div className='pname'  >{data.project_name}</div>
+              <div className='pname'  >{data.name}</div>
 
               <div className='plinks'>
+                {data.gitLink &&
                 <div className='plink_div'>
-                  <a href={data.git_link} target='_blank' rel="noreferrer">
+                  <a href={data.gitLink} target='_blank' rel="noreferrer">
                     <img src={gitsvg} alt="" className='icn_mod1' />
                   </a>
-                </div >
-                {data.project_weblink &&
+                </div >}
+                {data.webLink &&
                   <div className='plink_div'>
-                    <a href={data.git_link} target='_blank' rel="noreferrer">
+                    <a href={data.webLink} target='_blank' rel="noreferrer">
                       <img src={websvg} alt="" className='icn_mod2' />
                     </a>
                   </div>
@@ -65,7 +66,7 @@ const Modal = ({ data, setModal }) => {
                       <button onClick={onPrevclick} className='prevbtn'><img src={Prev} alt='imgs' fill={{ fill: 'black' }} /></button>
                     }
                     {
-                      current !== data.project_imgs.length - 1 &&
+                      current !== data.screenShots.length-1  &&
                       <button onClick={onNextclick} className='nextbtn'><img src={Next} alt='imgs' /></button>
                     }
 
@@ -73,7 +74,7 @@ const Modal = ({ data, setModal }) => {
                   <motion.div className='car_back'
                     animate={{ x: `calc(-${current * 100}%)` }}>
                     {
-                      data.project_imgs.map((imgsrc, index) => {
+                      data.screenShots.map((imgsrc, index) => {
                         return (
                           <img src={imgsrc} alt='img' key={index} className='carimg' />
                         )
@@ -85,12 +86,12 @@ const Modal = ({ data, setModal }) => {
                 </div>
               </MotionConfig>
             </Fade>
-            {data.project_imgs.length !== 1 &&
+            {data.screenShots.length !== 1 &&
               <div id='ctr_sec'>
                 <div id='btn_cntrl'>
 
                   {
-                    data.project_imgs.map((_, index) => {
+                    data.screenShots.map((_, index) => {
                       return (
                         <div className={index === current ? 'cl_dot' : 'dot'} key={index} onClick={() => {
                           setCurrent(index);
@@ -107,7 +108,7 @@ const Modal = ({ data, setModal }) => {
 
             >
               <Fade direction='up' triggerOnce>
-                {data.project_tags.map((item, index) => {
+                {data.tags.map((item, index) => {
                   return (
                     <motion.div
                       className='tag_div'>
@@ -123,7 +124,7 @@ const Modal = ({ data, setModal }) => {
                 <p className='abt_proj'>About project</p>
                 <p className='pdesc'>
                   {
-                    data.project_desc
+                    data.description
                   }
                   The display CSS property sets whether an element is treated as a block or inline box
                   and the layout used for its children, such as flow layout, grid or flex.
