@@ -9,17 +9,22 @@ import Contact from './components/contact/Contact'
 import Background from './components/background/Background'
 import './App.css'
 import Footer from './components/footer/Footer'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Modal from './components/modal/Modal'
 import toast, { Toaster } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
+import axios from 'axios'
+
 const App = () => {
   const [modal, setModal] = useState(false);
   const [modData, setModData] = useState(null);
+  const [projects, setProjects] = useState([])
+
   const form = useRef();
   const submitHandler = (event) => {
     event.preventDefault();
+    //vova syzm irqi krtv
 
     emailjs.sendForm('service_yegchll', 'template_kvqosfp', event.target, '62snBK0RsvIeoiV6V')
       .then((result) => {
@@ -29,8 +34,26 @@ const App = () => {
       }, (error) => {
         console.log(error.text);
       });
-      
+
   }
+
+  const fetchData = () => {
+    axios.get('http://localhost:8000/api/v1/projects/get-projects')
+      .then((res) => {
+        const data=res.data
+        console.log("data : ",data)
+        setProjects(data)
+        console.log("projects : ",projects)
+      })
+      .catch((err) => {
+        throw new Error("Cant fetch the projects : ", err)
+      })
+  }
+
+  useEffect(() => {
+    fetchData()
+  },[])
+
 
   return (
     <>
@@ -52,12 +75,11 @@ const App = () => {
         <Home />
         <About />
         <Skill />
-        <Project modal={modal} setModal={setModal} modData={modData} setModData={setModData} />
+        <Project project={projects} modal={modal} setModal={setModal} modData={modData} setModData={setModData} />
         <Testimonial />
         <Contact form={form} submitHandler={submitHandler} />
         <Footer />
       </div>
-
     </>
   )
 }

@@ -6,11 +6,11 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Fade } from "react-awesome-reveal";
 
-const Project = ({ modal, setModal, modData, setModData }) => {
+
+const Project = ({ projects,modal, setModal, modData, setModData }) => {
   const [filtered, setFiltered] = useState(data);
   const [activecat, setActivecat] = useState('all');
-
-
+ 
 
   useEffect(() => {
     if (activecat === 'all') {
@@ -79,8 +79,6 @@ const Project = ({ modal, setModal, modData, setModData }) => {
               )
             })
           }
-        
-
         </AnimatePresence>
       </motion.div>
      
