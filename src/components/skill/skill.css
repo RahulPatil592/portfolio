@@ -141,7 +141,8 @@
         width: 100%;
         padding-bottom: 5vmin;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
         align-items: center;
         gap: 10vmin;
 
@@ -150,6 +151,7 @@
     .skills_div{
         width: 100%;
         border-radius: 2vmin;
+        
        
         
     }
@@ -163,9 +165,8 @@
     .skill_div{
        border-radius: 0 0 2vmin 2vmin;
        row-gap: 4vmin;
-       padding: 2vmin 4vmin;
-       column-gap: 5.5vmin;
-    
+       padding: 2vmin 3vmin;
+       column-gap: 5vmin;
     }
     
     .skill_back_circ{

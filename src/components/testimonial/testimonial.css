@@ -11,27 +11,15 @@
 
 
 #testmns_sec {
-    width: 95%;
+    width: 98%;
     height: fit-content;
-    display: flex;
-    /* justify-content: center; */
     align-items: baseline;
-    gap: 1vmax;
-    overflow: hidden;   
+    overflow: hidden;
+    border-radius: .5vmax;   
 }
 
 
 
-#testimonials {
-    width: fit-content; 
-    height: fit-content; 
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 3vmax;
-     cursor: grab;
-    padding: 0 2vmax;
-}
 
 .testimonial {
     width: 25vmax;
@@ -43,6 +31,8 @@
     padding: 1vmax;
     border-radius: .9vmax;
    pointer-events: none;
+   margin: 0 1vmax;
+   transition: all 0.5s;
    
 }
 
@@ -64,11 +54,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    /* background-color: aquamarine; */
 
 }
 
 .person_img {
-    width: 2.6vmax;
+    width:2.8vmax;
 }
 
 .person_detail {
@@ -125,7 +117,7 @@
 
     #testmns_sec 
     {
-        width: 95%;
+        width: 100%;
         gap: 1vmin;
     }
 
@@ -149,7 +141,7 @@
         width: 86vmin;
         height: 100%;
         display: flex;
-        gap: 2vmin;
+        gap: 3vmin;
         padding: 2vmin;
         border-radius: 2vmin;
         pointer-events: none;
@@ -162,8 +154,8 @@
 
     .person_img_div 
     {
-        width: 10vmin;
-        height: 10vmin;
+        width: 14vmin;
+        height: 14vmin;
     }
 
     .person_img 
@@ -180,20 +172,20 @@
 
     .person_detail .name 
     {
-        font-size: 3vmin;
-        line-height: 3vmin;
+        font-size: 4vmin;
+        line-height: 4vmin;
 
     }
 
     .person_detail .prof
     {
-        font-size: 2vmin;
-        line-height: 2vmin;
+        font-size: 3vmin;
+        line-height: 3vmin;
     }
 
     .test_cont 
     {
-        font-size: 3vmin;
+        font-size: 3.5vmin;
     }
 
 }

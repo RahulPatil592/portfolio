@@ -9,22 +9,24 @@ import Contact from './components/contact/Contact'
 import Background from './components/background/Background'
 import './App.css'
 import Footer from './components/footer/Footer'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import Modal from './components/modal/Modal'
 import toast, { Toaster } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
 
 
+
 const App = () => {
   const [modal, setModal] = useState(false);
   const [modData, setModData] = useState(null);
-  
+
 
   const form = useRef();
   const submitHandler = (event) => {
     event.preventDefault();
     //vova syzm irqi krtv
+   
 
     emailjs.sendForm('service_yegchll', 'template_kvqosfp', event.target, '62snBK0RsvIeoiV6V')
       .then((result) => {
@@ -52,10 +54,11 @@ const App = () => {
 
         <Modal data={modData} setModal={setModal} />
       }
-      <div><Toaster
-        position="top-center"
-        reverseOrder={false}
-      /></div>
+      <div>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        /></div>
       <div id='back'>
         <Home />
         <About />

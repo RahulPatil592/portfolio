@@ -4,6 +4,7 @@ import './navbar.css'
 import { easeOut, motion } from 'framer-motion'
 
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { IoMdClose } from "react-icons/io";
 const Navbar = () => {
   const [showList, setShowList] = useState(false);
 
@@ -41,8 +42,15 @@ const Navbar = () => {
         <a href="sd" onClick={(e) => {
           e.preventDefault();
           setShowList(!showList)
-        }}>
-          <GiHamburgerMenu id='ham_icon' size={'7vmin'} />
+        }}>{
+            !showList &&
+
+            <GiHamburgerMenu id='ham_icon' size={'7vmin'} />
+          }{
+            showList &&
+            <IoMdClose id='ham_icon' size={'7vmin'} />
+          }
+
         </a>
       </div>
     </div>

@@ -12,19 +12,19 @@
 }
 
 #proj_type_sec{
-    width: 50%;
+    width: 40%;
     height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x:hidden;
 }
 
 #proj_type_sec ul{
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 1.5vmax;
 }
 
@@ -38,7 +38,6 @@
     justify-content: center;
     align-items: center;
     border-radius: .8vmax;
-    
     font-size: 1.1vmax;
     font-weight: 400;
 }
@@ -101,11 +100,11 @@
     justify-content: center;
     align-items: center; 
     border-radius: .5vmax;
+    overflow: hidden;
     
 }
 .proj_img_div img{
     width: 100%;
-    
     border-radius: .5vmax;
 }
 .proj_desc_div{
@@ -154,25 +153,39 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        /* background-color: aliceblue; */
     }
     
     #proj_type_sec ul{
         gap: 5vmin;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1vmin 0;
+        
+        
     }
     
     #proj_type_sec ul .proj_type{
-        padding: 1vmin 2.5vmin;
+        padding: 1vmin 5vmin;
         border-radius: 3vmin;
         font-size: 4vmin;
+        height: 70%;
     }
     #proj_type_sec ul .active{
-        padding: 1vmin 2.5vmin;
+        padding: 1vmin 5vmin;
         border-radius: 3vmin;
         font-size: 4vmin;
         background-color: var(--color-secondary);
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70%;
+       
     }
+
     #proj_type_sec ul .proj_type:hover{
-        padding: 1vmin 2.5vmin;
+        padding: 1vmin 5vmin;
         border-radius: 3vmin;
         font-size: 4vmin;
     }

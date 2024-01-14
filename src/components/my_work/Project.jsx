@@ -5,19 +5,16 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Fade } from "react-awesome-reveal";
 import axios from 'axios'
-
 const Project = ({ modal, setModal, modData, setModData }) => {
   const [filtered, setFiltered] = useState([]);
   const [activecat, setActivecat] = useState('All');
   const [projects, setProjects] = useState([]);
   const [categories,setCategories]=useState([]);
-  // setCategories()
-  // const categories=["all","ui design","web_development"]
   
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/v1/projects/get-projects');
+        const response = await axios.get('/api/v1/projects/get-projects');
         const data = response.data[0];
         if(data.length===0){
           console.log("No data")
@@ -63,34 +60,29 @@ const Project = ({ modal, setModal, modData, setModData }) => {
       <div id='proj_type_sec'>
         <ul>
           <Fade direction='up' cascade damping={0.1} delay={200}>
-            {
-              categories.map((cat,index)=>{
-                return(
-                  <li 
-                  className={activecat ===cat? "active" : "proj_type"} 
-                  onClick={() => {setActivecat(cat)}}
-                  key={index}
-                  >{cat}</li>
-                )
-              })
-            }
-            {/* <li className={activecat === 'all' ? "active" : "proj_type"} onClick={() => {
-              setActivecat('all');
-            }}>All</li>
-            <li className={activecat === 'web_development' ? "active" : "proj_type"} onClick={() => {
-              setActivecat('web_development');
-            }}>Web Development</li>
-            <li className={activecat === 'ui design' ? "active" : "proj_type"} onClick={() => {
-              setActivecat('ui design');
-            }}>UI Design</li> */}
+            
+              {
+                categories.map((cat,index)=>{
+                  return(
+                    <li
+                    className={activecat ===cat? "active" : "proj_type"}
+                    onClick={() => {setActivecat(cat)}}
+                    key={index}
+                    >{cat.toUpperCase()}</li>
+                  )
+                })
+              }
+         
           </Fade>
         </ul>
       </div>
 
       {
         projects.length === 0 &&
-        <div>
-          No internet connection
+        <div style={{width:"100vw",display:"flex",justifyContent:"center",alignItems:"baseline",height:"20vmax"}}>
+          <div style={{width:"fit-content"}}>
+            Loading...
+          </div>
         </div>
         
       }
