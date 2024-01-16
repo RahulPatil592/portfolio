@@ -43,11 +43,11 @@ const Modal = ({ data, setModal }) => {
 
               <div className='plinks'>
                 {data.gitLink &&
-                <div className='plink_div'>
-                  <a href={data.gitLink} target='_blank' rel="noreferrer">
-                    <img src={gitsvg} alt="" className='icn_mod1' />
-                  </a>
-                </div >}
+                  <div className='plink_div'>
+                    <a href={data.gitLink} target='_blank' rel="noreferrer">
+                      <img src={gitsvg} alt="" className='icn_mod1' />
+                    </a>
+                  </div >}
                 {data.webLink &&
                   <div className='plink_div'>
                     <a href={data.webLink} target='_blank' rel="noreferrer">
@@ -66,7 +66,7 @@ const Modal = ({ data, setModal }) => {
                       <button onClick={onPrevclick} className='prevbtn'><img src={Prev} alt='imgs' fill={{ fill: 'black' }} /></button>
                     }
                     {
-                      current !== data.screenShots.length-1  &&
+                      current !== data.screenShots.length - 1 &&
                       <button onClick={onNextclick} className='nextbtn'><img src={Next} alt='imgs' /></button>
                     }
 
@@ -120,15 +120,15 @@ const Modal = ({ data, setModal }) => {
               </Fade>
             </div>
             <div className='pdesc_sec'>
-             
-                <p className='abt_proj'>About project</p>
-                <p className='pdesc'>
-                  {
-                    data.description
-                  }
 
-                </p>
-          
+              <p className='abt_proj'>About project</p>
+              <p className='pdesc'>
+                {
+                  data.description
+                }
+
+              </p>
+
 
             </div>
           </div>

@@ -1,13 +1,13 @@
 html {
-    scroll-behavior: smooth;
-  }
-#back{
-    width: 100vw;
-    height: fit-content;
-    overflow: hidden;
-    background:rgba(34, 32, 34, 0.50);
-    -webkit-backdrop-filter: blur(100px);
-    backdrop-filter: blur(100px);
-    
+  scroll-behavior: smooth;
 }
 
+#back {
+  width: 100vw;
+  height: fit-content;
+  overflow: hidden;
+  background: rgba(34, 32, 34, 0.50);
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+
+}

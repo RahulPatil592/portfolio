@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <div id='nav'>
-      <div id='app_logo'>Rahul</div>
+      <div id='app_logo'>RahulPatil</div>
       <ul className={showList ? 'nav_list_mob' : 'nav_list'}>
         <motion.li
           initial={{ opacity: 1, scale: 1 }}

@@ -10,13 +10,13 @@
     padding-bottom: 10vmax;
 }
 
-#cnt_cont .titles{
-  
-  display: flex;
-  justify-content: baseline;
+#cnt_cont .titles {
+
+    display: flex;
+    justify-content: baseline;
 }
 
-#cnt_cont{
+#cnt_cont {
     width: 41.6%;
     height: fit-content;
     display: flex;
@@ -24,11 +24,11 @@
     align-items: baseline;
     justify-content: baseline;
     gap: 2.5vmax;
-    
+
 }
 
 
-#cnt_cont #cnt_para{
+#cnt_cont #cnt_para {
     font-weight: 350;
     font-size: 1.1vmax;
     color: var(--color-white-faint);
@@ -37,24 +37,25 @@
 
 
 
-#form_sec{
+#form_sec {
     position: absolute;
     right: 0;
     width: 50%;
     height: fit-content;
-    background-color:rgba(68, 67, 68, 0.75);
+    background-color: rgba(68, 67, 68, 0.75);
     border-radius: 1vmax;
     padding: 1vmax;
     box-shadow: 0 0 20px -5px black;
 }
 
-#form_title{
+#form_title {
     font-size: 2vmax;
     font-weight: 500;
     height: 15%;
     color: var(--color-white-faint);
 }
-form{
+
+form {
     width: 100%;
     height: 85%;
     display: flex;
@@ -64,7 +65,7 @@ form{
 }
 
 
-#row1{
+#row1 {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -73,72 +74,72 @@ form{
     gap: 4vmax;
 }
 
-#row1 .lbl_inpt{
- position: relative;
-  width: 50%;
-}
-
-
-#row1 input{
-   width: 100%;
-}
-
-#row2 .lbl_inpt{
+#row1 .lbl_inpt {
     position: relative;
-     width: 100%;
+    width: 50%;
 }
 
 
-#row2 textarea{
+#row1 input {
+    width: 100%;
+}
+
+#row2 .lbl_inpt {
+    position: relative;
+    width: 100%;
+}
+
+
+#row2 textarea {
     width: 100%;
     height: fit-content;
     max-height: 5vmax;
     resize: none;
-   
- }
 
-.label{
-    font-family: 'poppins',sans-serif;
+}
+
+.label {
+    font-family: 'poppins', sans-serif;
     font-weight: 400;
     font-size: 1.2vmax;
     position: absolute;
     left: 0vmax;
     transition: all .4s;
     color: var(--color-primary-faint);
-   
+
 }
 
-#row2 label{
+#row2 label {
     left: 0;
-    top:1.3vmax;
+    top: 1.3vmax;
 }
 
-.input-text{
-    font-family: 'poppins',sans-serif;
+.input-text {
+    font-family: 'poppins', sans-serif;
     font-weight: 400;
     font-size: 1.1vmax;
     background: transparent;
-     color: var(--color-white-faint);
+    color: var(--color-white-faint);
     border-bottom: 2px solid var(--color-primary-faint);
 }
 
-.lbl_inpt input:valid ~ label,
-.lbl_inpt input:focus ~ label{
+.lbl_inpt input:valid~label,
+.lbl_inpt input:focus~label {
     color: var(--color-primary);
-   transform: translateY(-1.1vmax);
-   font-size: .8vmax;
+    transform: translateY(-1.1vmax);
+    font-size: .8vmax;
 
 }
 
-.lbl_inpt textarea:valid ~ label,
-.lbl_inpt textarea:focus ~ label{
+.lbl_inpt textarea:valid~label,
+.lbl_inpt textarea:focus~label {
     color: var(--color-primary);
     transform: translateY(-2.5vmax);
-   font-size: .8vmax;
+    font-size: .8vmax;
 }
 
 
-#row3{
+#row3 {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -146,31 +147,31 @@ form{
     align-items: center;
 }
 
-#row3 button{
+#row3 button {
     width: fit-content;
     height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: .5vmax;
-    font-family: 'poppins',sans-serif;
+    font-family: 'poppins', sans-serif;
     font-size: 1.2vmax;
     font-weight: 500;
     padding: .3vmax 1.2vmax;
     border-radius: 1vmax;
     background-color: var(--color-white-faint-soft);
-    
+
     color: var(--color-white);
     cursor: pointer;
     transition: all .2s;
 }
 
-#row3 button:hover{
+#row3 button:hover {
     box-shadow: 0 0 10px -2px black;
     transform: scale(1.05);
 }
 
-#row3 button img{
+#row3 button img {
     width: 1.2vmax;
 }
 
@@ -179,7 +180,7 @@ form{
 
 @media screen and (max-width:600px) {
     #cnt_sec {
-        position:relative;
+        position: relative;
         width: 100%;
         height: fit-content;
         display: flex;
@@ -187,121 +188,122 @@ form{
         align-items: center;
         justify-content: center;
         padding: 0 3vmin;
-        padding-top:6vmin;
+        padding-top: 6vmin;
         padding-bottom: 8vmin;
     }
-    
-    #cnt_cont .titles{
+
+    #cnt_cont .titles {
 
         display: flex;
         justify-content: center;
-      }
-    #cnt_cont{
+    }
+
+    #cnt_cont {
         width: 100%;
         padding: 0;
         gap: 3vmin;
-       align-items: center;
-        
+        align-items: center;
+
     }
-     
-    #cnt_cont #cnt_para{
+
+    #cnt_cont #cnt_para {
         font-weight: 350;
         font-size: 4vmin;
         text-align: center;
         color: var(--color-white-faint);
     }
-    
-    #form_sec{
+
+    #form_sec {
         position: relative;
         width: 98%;
         border-radius: 2vmin;
         padding: 2vmin;
         box-shadow: 0 0 20px -5px black;
     }
-    
-    #form_title{
+
+    #form_title {
         font-size: 6vmin;
         font-weight: 500;
 
     }
-    form{
+
+    form {
         width: 100%;
         gap: 8vmin;
         padding: 5vmin 3vmin 2vmin 0;
     }
-    
-    #row1 .lbl_inpt{
-        
-         width: 100%;
-       }
-       
-    #row1{
+
+    #row1 .lbl_inpt {
+
+        width: 100%;
+    }
+
+    #row1 {
         display: flex;
         flex-direction: column;
         gap: 8vmin;
     }
 
 
-    
-    
-    #row2 textarea{
+
+
+    #row2 textarea {
         width: 100%;
         height: fit-content;
         max-height: 12vmin;
         resize: none;
-       
-     }
-    
-    .label{
+
+    }
+
+    .label {
         font-size: 4vmin;
         left: 0vmax;
         transition: all .4s;
         color: var(--color-primary-faint);
-       
+
     }
-    
-    #row2 label{
+
+    #row2 label {
         left: 0;
-        top:2vmin;
+        top: 2vmin;
     }
-    
-    .input-text{
-        font-family: 'poppins',sans-serif;
+
+    .input-text {
+        font-family: 'poppins', sans-serif;
         font-weight: 400;
         font-size: 4vmin;
         background: transparent;
-         color: var(--color-white-faint);
+        color: var(--color-white-faint);
         border-bottom: 1px solid var(--color-primary-faint);
     }
-    
-    .lbl_inpt input:valid ~ label,
-    .lbl_inpt input:focus ~ label{
+
+    .lbl_inpt input:valid~label,
+    .lbl_inpt input:focus~label {
         color: var(--color-primary);
-       transform: translateY(-2vmin);
-       font-size: 2vmin;
-    
+        transform: translateY(-2vmin);
+        font-size: 2vmin;
+
     }
-    
-    .lbl_inpt textarea:valid ~ label,
-    .lbl_inpt textarea:focus ~ label{
+
+    .lbl_inpt textarea:valid~label,
+    .lbl_inpt textarea:focus~label {
         color: var(--color-primary);
         transform: translateY(-5vmin);
         font-size: 2vmin;
     }
-    
-    
 
-    
-    #row3 button{
 
+
+
+    #row3 button {
         gap: 1vmin;
         font-size: 4vmin;
         padding: 1vmin 4vmin;
         border-radius: 2vmin;
     }
-    
-    #row3 button img{
+
+    #row3 button img {
         width: 3.5vmin;
     }
-    
+
 }

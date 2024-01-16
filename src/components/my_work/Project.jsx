@@ -9,18 +9,18 @@ const Project = ({ modal, setModal, modData, setModData }) => {
   const [filtered, setFiltered] = useState([]);
   const [activecat, setActivecat] = useState('All');
   const [projects, setProjects] = useState([]);
-  const [categories,setCategories]=useState([]);
-  
+  const [categories, setCategories] = useState([]);
+
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const response = await axios.get('/api/v1/projects/get-projects');
         const data = response.data[0];
-        if(data.length===0){
+        if (data.length === 0) {
           console.log("No data")
         }
         categories.push("All")
-        for(let i=0; i<response.data[1].length; i++){
+        for (let i = 0; i < response.data[1].length; i++) {
           categories.push(response.data[1][i]._id)
         }
         setCategories(categories)
@@ -60,31 +60,31 @@ const Project = ({ modal, setModal, modData, setModData }) => {
       <div id='proj_type_sec'>
         <ul>
           <Fade direction='up' cascade damping={0.1} delay={200}>
-            
-              {
-                categories.map((cat,index)=>{
-                  return(
-                    <li
-                    className={activecat ===cat? "active" : "proj_type"}
-                    onClick={() => {setActivecat(cat)}}
+
+            {
+              categories.map((cat, index) => {
+                return (
+                  <li
+                    className={activecat === cat ? "active" : "proj_type"}
+                    onClick={() => { setActivecat(cat) }}
                     key={index}
-                    >{cat.toUpperCase()}</li>
-                  )
-                })
-              }
-         
+                  >{cat.toUpperCase()}</li>
+                )
+              })
+            }
+
           </Fade>
         </ul>
       </div>
 
       {
         projects.length === 0 &&
-        <div style={{width:"100vw",display:"flex",justifyContent:"center",alignItems:"baseline",height:"20vmax"}}>
-          <div style={{width:"fit-content"}}>
+        <div style={{ width: "100vw", display: "flex", justifyContent: "center", alignItems: "baseline", height: "20vmax" }}>
+          <div style={{ width: "fit-content" }}>
             Loading...
           </div>
         </div>
-        
+
       }
       {
 

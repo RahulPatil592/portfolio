@@ -84,14 +84,14 @@ const Testimonial = () => {
                       </div>
                     </div>
                     <p className='test_cont'>{
-                      testimony.content.length>200 &&
-                    `${testimony.content.slice(0, 200)}...`
+                      testimony.content.length > 200 &&
+                      `${testimony.content.slice(0, 200)}...`
                     }
-                    {
-                      testimony.content.length<=200 &&
-                      testimony.content
-                    }
-                   </p>
+                      {
+                        testimony.content.length <= 200 &&
+                        testimony.content
+                      }
+                    </p>
                   </motion.div>
                 );
               })

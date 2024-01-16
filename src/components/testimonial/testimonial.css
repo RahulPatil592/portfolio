@@ -15,7 +15,7 @@
     height: fit-content;
     align-items: baseline;
     overflow: hidden;
-    border-radius: .5vmax;   
+    border-radius: .5vmax;
 }
 
 
@@ -30,10 +30,10 @@
     gap: 2vmax;
     padding: 1vmax;
     border-radius: .9vmax;
-   pointer-events: none;
-   margin: 0 1vmax;
-   transition: all 0.5s;
-   
+    pointer-events: none;
+    margin: 0 1vmax;
+    transition: all 0.5s;
+
 }
 
 
@@ -60,7 +60,7 @@
 }
 
 .person_img {
-    width:2.8vmax;
+    width: 2.8vmax;
 }
 
 .person_detail {
@@ -107,37 +107,32 @@
 
 
 @media screen and (max-width:600px) {
-   
-    #testi_sec 
-    {
+
+    #testi_sec {
         padding: 0 1vmin;
         gap: 10vmin;
     }
 
 
-    #testmns_sec 
-    {
+    #testmns_sec {
         width: 100%;
         gap: 1vmin;
     }
 
 
 
-    .btn 
-    {
+    .btn {
         width: 6vmin;
     }
 
-    #testimonials 
-    {
-       
+    #testimonials {
+
         gap: 4vmin;
         cursor: grab;
-       
+
     }
 
-    .testimonial 
-    {
+    .testimonial {
         width: 86vmin;
         height: 100%;
         display: flex;
@@ -147,44 +142,37 @@
         pointer-events: none;
     }
 
-    .person_div 
-    {
+    .person_div {
         gap: 2vmin;
     }
 
-    .person_img_div 
-    {
+    .person_img_div {
         width: 14vmin;
         height: 14vmin;
     }
 
-    .person_img 
-    {
+    .person_img {
         width: 6vmin;
     }
 
-    .person_detail 
-    {
+    .person_detail {
         gap: 1vmin;
 
     }
 
 
-    .person_detail .name 
-    {
+    .person_detail .name {
         font-size: 4vmin;
         line-height: 4vmin;
 
     }
 
-    .person_detail .prof
-    {
+    .person_detail .prof {
         font-size: 3vmin;
         line-height: 3vmin;
     }
 
-    .test_cont 
-    {
+    .test_cont {
         font-size: 3.5vmin;
     }
 
