@@ -1,4 +1,4 @@
-#skill_sec{
+#skill_sec {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -10,28 +10,28 @@
     padding-top: 5vmax;
 }
 
-#sk_divs{
+#sk_divs {
     width: 98%;
     height: fit-content;
     padding-bottom: 2vmax;
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: center;
-    align-items:baseline;
+    align-items: baseline;
     column-gap: 3vmax;
     row-gap: 3vmax;
 }
 
-.skills_div{
+.skills_div {
     background-color: var(--color-white-faint-soft);
     width: 30vmax;
     height: fit-content;
     border-radius: 1vmax;
     box-shadow: 0 0 20px -3px black;
-    
+
 }
 
-.skill_title{
+.skill_title {
     width: 100%;
     height: 3.5vmax;
     background-color: var(--color-secondary);
@@ -46,24 +46,23 @@
     font-size: 1.3vmax;
 }
 
-.skill_div{
-   width: 100%;
-   height: fit-content;
-   border: 3px solid var(--color-secondary);
-   border-top: none;
-   border-radius: 0 0 1vmax 1vmax;
-   display: grid;
-   grid-template-columns: auto auto auto auto;
-   justify-content: center;    
-   align-items: center;
-   row-gap: 1vmax;
-   padding: 1vmax 0;
-   column-gap: 1.5vmax;
+.skill_div {
+    width: 100%;
+    height: fit-content;
+    border: 3px solid var(--color-secondary);
+    border-top: none;
+    border-radius: 0 0 1vmax 1vmax;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1vmax;
+    padding: 1vmax 0;
+    column-gap: 1.5vmax;
 }
 
-.skill
-{
-   /* width: fit-content; */
+.skill {
+    /* width: fit-content; */
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -71,7 +70,7 @@
     justify-content: center;
 }
 
-.skill_back_circ{
+.skill_back_circ {
     width: 5.5vmax;
     height: 6.5vmax;
     background-color: #BD6B6B;
@@ -82,10 +81,10 @@
 
 }
 
-.skill_white_back{
+.skill_white_back {
     width: 94%;
     height: 94%;
-    background-color:var(--color-white);
+    background-color: var(--color-white);
     border-radius: 500px;
     display: flex;
     justify-content: center;
@@ -94,15 +93,15 @@
 }
 
 
-.skill_logo{
-   width: 3vmax;
+.skill_logo {
+    width: 3vmax;
 }
 
-.skill_logo:hover{
+.skill_logo:hover {
     filter: drop-shadow(0px 0px 2px #000000);
 }
 
-.skill_detail{
+.skill_detail {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -110,7 +109,7 @@
     font-weight: 400;
 }
 
-.skill_name{
+.skill_name {
     width: 100%;
     padding-top: .5vmax;
     text-align: center;
@@ -119,7 +118,7 @@
     height: fit-content;
 }
 
-.skill_level{
+.skill_level {
     width: 100%;
     padding-top: .5vmax;
     text-align: center;
@@ -131,13 +130,13 @@
 
 
 @media screen and (max-width:600px) {
-    #skill_sec{
+    #skill_sec {
         padding: 0 5vmin;
         gap: 10vmin;
-        padding-top:6vmin;
+        padding-top: 6vmin;
     }
-    
-    #sk_divs{
+
+    #sk_divs {
         width: 100%;
         padding-bottom: 5vmin;
         display: flex;
@@ -147,48 +146,49 @@
         gap: 10vmin;
 
     }
-    
-    .skills_div{
+
+    .skills_div {
         width: 100%;
         border-radius: 2vmin;
-        
-       
-        
+
+
+
     }
-    
-    .skill_title{
+
+    .skill_title {
         height: 10vmin;
         border-radius: 2vmin 2vmin 0 0;
-         font-size: 5vmin;
+        font-size: 5vmin;
     }
-    
-    .skill_div{
-       border-radius: 0 0 2vmin 2vmin;
-       row-gap: 4vmin;
-       padding: 2vmin 3vmin;
-       column-gap: 5vmin;
+
+    .skill_div {
+        border-radius: 0 0 2vmin 2vmin;
+        row-gap: 4vmin;
+        padding: 2vmin 3vmin;
+        column-gap: 5vmin;
     }
-    
-    .skill_back_circ{
+
+    .skill_back_circ {
         width: 15vmin;
         height: 18vmin;
         border-radius: 100vmax;
-    
+
     }
-    
-    .skill_logo{
-       width: 9vmin;
+
+    .skill_logo {
+        width: 9vmin;
     }
-    .skill_name{
+
+    .skill_name {
         padding-top: 2vmin;
         font-size: 3vmin;
         line-height: 3vmin;
     }
-    
-    .skill_level{
+
+    .skill_level {
         padding-top: 1vmin;
         font-size: 2vmin;
         line-height: 2vmin;
     }
-    
+
 }

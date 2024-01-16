@@ -34,7 +34,7 @@ function Background() {
          </div>
          <div className='c15'>
          </div>
-         {/* <div id='back'></div> */}
+         
     </div>
   )
 }

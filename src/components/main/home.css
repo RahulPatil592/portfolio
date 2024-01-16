@@ -59,7 +59,7 @@
 
 
 #social_media ul{
-    width: 12vmax;
+    width: fit-content;
     height: 2.7vmax;
     padding: 1vmax 1vmax;
     background-color: var(--color-white-faint);

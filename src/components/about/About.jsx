@@ -43,13 +43,13 @@ const About = () => {
             window.open(respdf);
           }}>
             View Resume
-            <FaArrowRight className='arrow_right'/>
+            <FaArrowRight className='arrow_right' />
           </button>
         </div>
       </Fade>
       <Fade direction='up' cascade damping={0.01} triggerOnce>
         <div id='edu_n_int'>
-        
+
           <div
             onMouseMove={(e) => {
               handlemouse(e);
@@ -101,32 +101,22 @@ const About = () => {
               </div>
             </Fade>
           </div>
-         
-
 
           <div id='int_sec'>
             <Fade direction='up' cascade damping={0.1}>
               <p className='title'>My Interests</p>
-
               <div id='intrs'>
-
                 {
                   interests.map((item, index) => {
                     return (
-
                       <div className={`int_div idiv${index}`} key={index}>
                         <img src={item.imgsrc} alt="" className='int_img' />
                         <p>{item.title}</p>
                       </div>
-
-
                     )
                   })
 
                 }
-
-
-
               </div>
             </Fade>
           </div>

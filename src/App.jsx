@@ -9,7 +9,8 @@ import Contact from './components/contact/Contact'
 import Background from './components/background/Background'
 import './App.css'
 import Footer from './components/footer/Footer'
-import { useState, useRef } from 'react'
+import { useState, useRef,useEffect } from 'react'
+import axios from 'axios'
 import Modal from './components/modal/Modal'
 import toast, { Toaster } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,26 +21,41 @@ import emailjs from '@emailjs/browser';
 const App = () => {
   const [modal, setModal] = useState(false);
   const [modData, setModData] = useState(null);
-
+  const [socialMediaData,setSocialMediaData]=useState([])
 
   const form = useRef();
   const submitHandler = (event) => {
     event.preventDefault();
     //vova syzm irqi krtv
    
-
+    const toastId = toast.loading("Please wait...")
     emailjs.sendForm('service_yegchll', 'template_kvqosfp', event.target, '62snBK0RsvIeoiV6V')
       .then((result) => {
-
-        toast.success('Message sent successfully !')
+       toast.success("Message sent", { id: toastId,isLoading: false })
         event.target.reset();
       }, (error) => {
         console.log(error.text);
       });
-
   }
 
 
+  useEffect(() => {
+    const fetchSocialMedias = async () => {
+      try {
+        const response = await axios.get('/api/v1/medias/get-socialmedias');
+
+        if (response.data.length === 0) {
+          console.log("No data")
+        }
+        setSocialMediaData(response.data.data);
+      } catch (error) {
+        console.error('Error fetching social media data:', error);
+      }
+    };
+    fetchSocialMedias();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 
   return (
@@ -60,13 +76,13 @@ const App = () => {
           reverseOrder={false}
         /></div>
       <div id='back'>
-        <Home />
+        <Home socialMediaData={socialMediaData}/>
         <About />
         <Skill />
         <Project modal={modal} setModal={setModal} modData={modData} setModData={setModData} />
         <Testimonial />
-        <Contact form={form} submitHandler={submitHandler} />
-        <Footer />
+        <Contact form={form} submitHandler={submitHandler} socialMediaData={socialMediaData} />
+        <Footer socialMediaData={socialMediaData}/>
       </div>
     </>
   )

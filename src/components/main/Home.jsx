@@ -2,10 +2,6 @@ import React from 'react'
 import {useTypewriter,Cursor} from 'react-simple-typewriter'
 import './home.css'
 import hi from'../../assets/emoji_hi.svg'
-import insta_icon from '../../assets/insta_icon.svg'
-import linked_icon from '../../assets/linkedin_icon.svg'
-import github_icon from '../../assets/github_icon.svg'
-import fb_icon from '../../assets/fb_icon.svg'
 import MyImage from '../../assets/MyImage.svg'
 import extag from '../../assets/extag.svg'
 import devtag from '../../assets/devtag.svg'
@@ -14,7 +10,8 @@ import {motion,AnimatePresence} from 'framer-motion'
 import { Fade } from "react-awesome-reveal";
 
 
-const Home = () => {
+const Home = ({socialMediaData}) => {
+    
     const [profession]=useTypewriter({
      words:['WEB DEVELOPER','UI/UX DEVELOPER','PROBLEM SOLVER'],
      loop:{},
@@ -51,10 +48,15 @@ const Home = () => {
                 <div id='social_media'>
                     <ul>
                         <Fade direction='up' cascade damping={0.3}>
-                            <li ><a href="https://www.linkedin.com/in/rahul-patil-121793288/" target='_blank'  rel="noreferrer"><img src={linked_icon} alt="" className='icn'/></a></li>
-                            <li ><a href="https://github.com/RahulPatil592" target='_blank'  rel="noreferrer"><img src={github_icon} alt=""  className='icn' /></a></li>
-                            <li ><a href="https://instagram.com/rahul_patil_8282?igshid=OGQ5ZDc2ODk2ZA==" target='_blank'  rel="noreferrer"><img src={insta_icon} alt=""  className='icn'/></a></li>
-                            <li ><a href="https://www.facebook.com/profile.php?id=100014906802326&mibextid=ZbWKwL" target='_blank'  rel="noreferrer"><img src={fb_icon} alt=""  className='icn'/></a></li>
+                            {socialMediaData.length>0 &&
+                                 socialMediaData.map((sm,index)=>{
+                                    return(
+                                        <li key={index} ><a href={sm.link} target='_blank'  rel="noreferrer"><img src={sm.img} alt="" className='icn'/></a></li>
+
+                                    )
+                                 })
+                          
+                            }
                         </Fade>
                     </ul>
                 </div>
