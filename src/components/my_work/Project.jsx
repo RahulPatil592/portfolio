@@ -15,13 +15,14 @@ const Project = ({ modal, setModal, modData, setModData }) => {
     const fetchProjects = async () => {
       try {
         const response = await axios.get('/api/v1/projects/get-projects');
-        const data = response.data[0];
+        console.log(response)
+        const data = response.data.data[0];
         if (data.length === 0) {
           console.log("No data")
         }
         categories.push("All")
-        for (let i = 0; i < response.data[1].length; i++) {
-          categories.push(response.data[1][i]._id)
+        for (let i = 0; i < response.data.data[1].length; i++) {
+          categories.push(response.data.data[1][i]._id)
         }
         setCategories(categories)
         setProjects(data);

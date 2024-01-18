@@ -12,16 +12,21 @@ const Skill = () => {
       try {
         const response = await axios.get('/api/v1/skills/get-skills');
 
-        if (response.data.length === 0) {
+        if (response.data.data.length === 0) {
           console.log("No data")
         }
-
-        setSkills(response.data.data);
+        console.log(response.data.data)
+        const d  =response.data.data
+        setSkills(d);
+      
+       
       } catch (error) {
         console.error('Error fetching skills:', error);
       }
     };
     fetchSkills();
+
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -38,6 +43,7 @@ const Skill = () => {
         </div>
       </Fade>
       {
+        
         skills.length === 0 &&
         <div style={{ width: "100vw", display: "flex", justifyContent: "center", alignItems: "center", height: "10vmax" }}>
           <div style={{ width: "fit-content" }}>
