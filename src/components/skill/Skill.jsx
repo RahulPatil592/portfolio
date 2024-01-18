@@ -6,7 +6,6 @@ import { useEffect } from 'react';
 const Skill = () => {
   const [skills, setSkills] = useState([])
 
-
   useEffect(() => {
     const fetchSkills = async () => {
       try {
@@ -15,9 +14,7 @@ const Skill = () => {
         if (response.data.data.length === 0) {
           console.log("No data")
         }
-        console.log(response.data.data)
-        const d  =response.data.data
-        setSkills(d);
+        setSkills(response.data.data);
       
        
       } catch (error) {
