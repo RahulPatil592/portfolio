@@ -15,7 +15,7 @@ const Project = ({ modal, setModal, modData, setModData }) => {
     const fetchProjects = async () => {
       try {
         const response = await axios.get('/api/v1/projects/get-projects');
-        console.log(response)
+   
         const data = response.data.data[0];
         if (data.length === 0) {
           console.log("No data")
