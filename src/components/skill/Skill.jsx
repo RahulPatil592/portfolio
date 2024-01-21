@@ -9,7 +9,7 @@ const Skill = () => {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await axios.get('/api/v1/skills/get-skills');
+        const response = await axios.get(`${process.env.REACT_APP_URL_IP}/api/v1/skills/get-skills`);
 
         if (response.data.data.length === 0) {
           console.log("No data")

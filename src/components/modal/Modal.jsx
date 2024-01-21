@@ -104,10 +104,8 @@ const Modal = ({ data, setModal }) => {
                 </div>
               </div>
             }
-            <div className='ptags'
-
-            >
-              <Fade direction='up' triggerOnce>
+             <Fade direction='up' triggerOnce>
+            <div className='ptags'>
                 {data.tags.map((item, index) => {
                   return (
                     <motion.div
@@ -117,19 +115,18 @@ const Modal = ({ data, setModal }) => {
                   )
                 })
                 }
-              </Fade>
+              
             </div>
+            </Fade>
             <div className='pdesc_sec'>
 
               <p className='abt_proj'>About project</p>
-              <p className='pdesc'>
+              <pre className='pdesc'>
                 {
-                  data.description
+                  `${data.description}`
+                  
                 }
-
-              </p>
-
-
+              </pre>
             </div>
           </div>
         </div>

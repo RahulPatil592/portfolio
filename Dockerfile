@@ -1,7 +1,11 @@
 FROM node:alpine AS development
 
 # Declaring env
-ENV NODE_ENV development
+# ENV NODE_ENV development
+ENV SERVICE_ID="service_yegchll"
+ENV TEMPLATE_ID="template_kvqosfp"
+ENV PUBLIC_KEY="62snBK0RsvIeoiV6V"
+
 
 # Setting up the work directory
 WORKDIR /react-app

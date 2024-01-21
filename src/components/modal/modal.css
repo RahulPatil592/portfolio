@@ -154,9 +154,11 @@
     width: 93%;
     padding: 2vmax 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: .8vmax;
 }
+
 
 .tag_div {
     width: fit-content;
@@ -276,6 +278,7 @@
     height: .5vmax;
     border-radius: 400px;
     background-color: rgb(40, 40, 40);
+    cursor: pointer;
 }
 
 .cl_dot {

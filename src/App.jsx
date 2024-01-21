@@ -1,3 +1,4 @@
+// import dotenv from "dotenv"
 import React from 'react'
 import Home from './components/main/Home'
 import Navbar from './components/navbar/Navbar'
@@ -15,7 +16,7 @@ import Modal from './components/modal/Modal'
 import toast, { Toaster } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
-
+// dotenv.config({ path: './.env' })
 
 
 const App = () => {
@@ -29,7 +30,7 @@ const App = () => {
     //vova syzm irqi krtv
 
     const toastId = toast.loading("Please wait...")
-    emailjs.sendForm('service_yegchll', 'template_kvqosfp', event.target, '62snBK0RsvIeoiV6V')
+    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID,process.env.REACT_APP_TEMPLATE_ID, event.target, process.env.REACT_APP_PUBLIC_KEY)
       .then((result) => {
         toast.success("Message sent", { id: toastId, isLoading: false })
         event.target.reset();
@@ -42,7 +43,7 @@ const App = () => {
   useEffect(() => {
     const fetchSocialMedias = async () => {
       try {
-        const response = await axios.get('/api/v1/medias/get-socialmedias');
+        const response = await axios.get(`${process.env.REACT_APP_URL_IP}/api/v1/medias/get-socialmedias`);
 
         if (response.data.length === 0) {
           console.log("No data")

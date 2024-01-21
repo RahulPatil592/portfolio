@@ -14,7 +14,7 @@ const Project = ({ modal, setModal, modData, setModData }) => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get('/api/v1/projects/get-projects');
+        const response = await axios.get(`${process.env.REACT_APP_URL_IP}/api/v1/projects/get-projects`);
    
         const data = response.data.data[0];
         if (data.length === 0) {

@@ -16,7 +16,7 @@ const Testimonial = () => {
 
     const fetchTestimonials = async () => {
       try {
-        const response = await axios.get('/api/v1/testimonials/get-testimonials');
+        const response = await axios.get(`${process.env.REACT_APP_URL_IP}/api/v1/testimonials/get-testimonials`);
 
         if (response.data.length === 0) {
           console.log("No data")
@@ -83,7 +83,8 @@ const Testimonial = () => {
                         <p className='prof'>{testimony.profession}</p>
                       </div>
                     </div>
-                    <p className='test_cont'>{
+                    <p className='test_cont'>
+                    {
                       testimony.content.length > 200 &&
                       `${testimony.content.slice(0, 200)}...`
                     }

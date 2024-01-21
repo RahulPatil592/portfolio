@@ -2,7 +2,6 @@
   "name": "rahul-portfolio",
   "version": "0.1.0",
   "private": true,
-  
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emailjs/browser": "^3.11.0",
@@ -10,9 +9,11 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.5",
+    "dotenv": "^16.3.2",
     "framer-motion": "^10.16.4",
     "http-proxy-middleware": "^2.0.6",
     "nodemailer": "^6.9.8",
+    "path": "^0.12.7",
     "react": "^18.2.0",
     "react-awesome-reveal": "^4.2.7",
     "react-dom": "^18.2.0",

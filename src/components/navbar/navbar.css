@@ -48,9 +48,6 @@
     padding: .3vmax .5vmax;
     background-color: rgba(70, 67, 68, .8);
     border-radius: 4vmax;
-
-
-
 }
 
 @keyframes textShine {
@@ -105,6 +102,9 @@
 /* Media query */
 
 @media screen and (max-width:600px) {
+    #app_logo{
+        font-size: 4vmin;
+    }
     #nav {
         height: 12vmin;
         align-items: center;
